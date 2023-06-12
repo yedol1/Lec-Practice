@@ -5,6 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>나에 대한 정보</title>
+    <!--Bootstrap 4.6.0-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
+      integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      ul,
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      header h1 {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 20px 0;
+        text-align: center;
+      }
+      nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+      nav ul li a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      nav ul li a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+      main {
+        padding: 20px;
+      }
+      section {
+        margin-bottom: 20px;
+      }
+      section h2 {
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 10px;
+      }
+      section ul,
+      section dl {
+        margin-left: 20px;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -18,8 +79,8 @@
         <li><a href="#company">취업하고자 하는 회사</a></li>
       </ul>
     </nav>
-    <main>
-      <section id="personal-info">
+    <main class="container">
+      <section id="personal-info" class="col-lg-6">
         <h2>개인 정보</h2>
         <dl>
           <dt>사진</dt>
@@ -34,7 +95,7 @@
           <dd>ENFP</dd>
         </dl>
       </section>
-      <section id="hobby">
+      <section id="hobby" class="col-lg-6">
         <h2>취미</h2>
         <ul>
           <li>야구 & 축구</li>
@@ -43,7 +104,7 @@
           <li>전시회관람</li>
         </ul>
       </section>
-      <section id="specialty">
+      <section id="specialty" class="col-lg-6">
         <h2>특기</h2>
         <ul>
           <li>일단 배우고자 싶은것이 있다면 바로 시도해보는것에 익숙합니다.</li>
@@ -52,7 +113,7 @@
           <li>의사소통을 통해 문제해결을 지향합니다.</li>
         </ul>
       </section>
-      <section id="company">
+      <section id="company" class="col-lg-6">
         <h2>취업하고자 하는 회사</h2>
         <p>web 3 를 다루는 회사도 관심있고, 플랫폼을 메인으로 다루는 회사에 관심이 있습니다. 특히, 제가 성장하는것에 있어 도움이 되는 회사를 원합니다.</p>
       </section>
