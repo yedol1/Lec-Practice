@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여기어때 - 회원가입</title>
+  </head>
+  <!-- 바디 -->
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <h1>여기어때</h1>
+
+      <!-- 네비바 -->
+      <nav>
+        <ul>
+          <li>
+            <a href="https://www.goodchoice.kr/" target="_blank">메인페이지</a>
+          </li>
+          <li>
+            <form
+              action="https://www.goodchoice.kr/product/result"
+              method="GET"
+              target="_blank"
+            >
+              🔍
+              <input type="text" name="keyword" />
+              <button type="submit">바로 검색하기</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 회원가입 입력란 -->
+    <div id="wrap">
+      <form method="post" action="">
+        <fieldset>
+          <legend>필수입력란(<span style="color: red">*</span>)</legend>
+          <table id="tb1">
+            <tr>
+              <td><label for="id">*아이디:</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="id"
+                  placeholder="영문소문자, 숫자, 특수문자 중 2가지 이상 혼합"
+                  required
+                  autofocus
+                />
+              </td>
+              <td><input type="submit" value="중복확인" /></td>
+            </tr>
+            <tr>
+              <td><label for="pw">*비밀번호:</label></td>
+              <td><input type="password" id="pw" required /></td>
+            </tr>
+            <tr>
+              <td><label for="pw1">*비밀번호확인:</label></td>
+              <td><input type="password" id="pw1" required /></td>
+            </tr>
+            <tr>
+              <td><label for="name">*이름:</label></td>
+              <td><input type="text" id="name" required /></td>
+            </tr>
+            <tr>
+              <td><label for="phone">*전화번호:</label></td>
+              <td><input type="tel" id="phone" required /></td>
+
+              <!-- tel은 전화번호를 뜻하지만 다른 값을 넣어도 오류가 생기지 않는다.-->
+            </tr>
+            <tr>
+              <td><label for="mail">*이메일주소:</label></td>
+              <td>
+                <input
+                  type="email"
+                  id="mail"
+                  placeholder="반드시 @ 포함시켜주세요."
+                  required
+                />
+              </td>
+              <td><input type="submit" value="이메일인증" /></td>
+
+              <!-- email은 반드시 @를 넣어주어야 한다.-->
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="submit" value="회원가입" />
+                <input type="button" value="취소하기" />
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+    </div>
+    <footer></footer>
+  </body>
+</html>
