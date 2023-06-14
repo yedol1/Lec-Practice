@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flutter Mobile Application Development Bootcamp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+      .card {
+        max-width: 320px;
+        max-height: 384px;
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+      }
+      .card-img-wrapper {
+        position: relative;
+      }
+      .card-img-top {
+        max-height: 152px;
+        object-fit: cover;
+      }
+      .card-subtitle {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: rgb(249, 160, 255);
+        border-radius: 10px;
+        padding: 0.125rem 0.5rem;
+        color: rgb(147, 51, 234);
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+      .card-state {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: rgb(220, 252, 231);
+        border-radius: 10px;
+        padding: 0.125rem 0.5rem;
+        color: rgb(22, 163, 74);
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+      .card-course {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: rgb(243, 244, 246);
+        border-radius: 10px;
+        padding: 0.125rem 0.5rem;
+        color: rgb(107, 114, 128);
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+      .flex-row {
+        display: flex;
+        justify-content: space-between;
+      }
+      .card-title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        font-weight: 700;
+      }
+      .card-text {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        color: #4b5563;
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+      .card-member {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+      .btn {
+        background-color: rgb(59, 130, 246);
+        width: 100%;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+      }
+      .card-link {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="p-5">
+    <div class="card mx-auto">
+      <div class="card-img-wrapper">
+        <img src="https://sniperfactory.com/api/files/courses/2g41rrrm5lttkl0/flutter3rd_qdbQ03hu4U.png" class="card-img-top" alt="Flutter Bootcamp image" />
+        <h6 class="card-subtitle mb-2">스팩</h6>
+      </div>
+      <div class="card-body">
+        <h6 class="card-state mb-2">신청가능</h6>
+        <h5 class="card-title">Flutter 모바일 어플리케이션 개발 부트캠프과정</h5>
+        <p class="card-text">
+          4개월 간 스나이퍼팩토리와 함께 Flutter로 "내가 원하는 어플리케이션"을 만들어보는 시간입니다. Flutter와 Dart의 기초부터 심화, 응용까지 배워보고 나만의 어플리케이션으로 포트폴리오를
+          쌓아보세요. 최종적으로 기업의 실제 프로젝트까지 직접 진행할 수 있는 만큼의 개발자로 성장하세요!
+        </p>
+
+        <div class="flex-row align-items-center">
+          <h6 class="card-course mb-4">취업연계과정</h6>
+          <div class="d-flex justify-content-end">
+            <h6 class="card-member mb-4 mr-2">기수 : 3기</h6>
+            <i class="fas fa-rocket"></i>
+          </div>
+        </div>
+
+        <button class="btn">
+          <a href="#" class="card-link">더 알아보기</a>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
