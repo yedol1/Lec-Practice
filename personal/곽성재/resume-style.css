@@ -1,0 +1,166 @@
+/* FONT */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap");
+/* RESET */
+*,
+h1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.4em;
+  font-size: 1rem;
+  word-break: keep-all;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+}
+li {
+  list-style: none;
+}
+/* VAR */
+:root {
+  --main-black-color: #2a272a;
+  --main-theme-color: #0859fa;
+  --main-sub-color: #22a4be;
+}
+
+/* STYLE */
+.gnb {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  backdrop-filter: blur(10px);
+
+  width: 100%;
+
+  padding: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: var(--main-theme-color);
+}
+.gnb > ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+body {
+  background-color: #f9f871;
+}
+
+.banner {
+  padding: 7vw 5vw 0 5vw;
+}
+.banner-summary {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  font-family: "Montserrat", sans-serif;
+  color: var(--main-theme-color);
+  font-size: 7vw;
+  line-height: 0.9em;
+  letter-spacing: -9px;
+
+  backdrop-filter: blur(10px);
+  width: 100%;
+  text-align: end;
+}
+.banner .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 4vw;
+  margin-bottom: 4vw;
+
+  border-bottom: 1px solid var(--main-black-color);
+}
+
+.tit {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 0.7rem;
+}
+strong {
+  font-style: italic;
+}
+
+.img-profile {
+  max-width: 270px;
+  border-radius: 50%;
+  margin-right: 3rem;
+}
+.wrap-content {
+  display: flex;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin-bottom: 7vw;
+}
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px solid var(--main-black-color);
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+.divider {
+  width: 1px;
+  border-right: 1px solid var(--main-black-color);
+
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.text-subTit {
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+#goals li {
+  font-size: 1.1em;
+  margin-bottom: 4px;
+}
+
+.underline {
+  text-decoration: underline wavy var(--main-sub-color);
+}
+@media (max-width: 800px) {
+  .gnb {
+    padding: 1vw;
+  }
+  .gnb > ul {
+    justify-content: space-between;
+  }
+  .banner-summary {
+    letter-spacing: -5px;
+  }
+  .banner .card,
+  .wrap-content {
+    flex-direction: column;
+  }
+  .wrap-content section {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .divider {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid var(--main-black-color);
+  }
+}
