@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crad List</title>
+    <!-- prettier-ignore -->
+    <script src="https://kit.fontawesome.com/f9f5ee174f.js" crossorigin="anonymous"></script>
+    <style>
+      /* reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      img {
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: initial;
+      }
+      ul {
+        list-style: none;
+      }
+      /* grid */
+      .container-grid {
+        margin: 0 auto;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        border: 1px solid black;
+      }
+
+      /* style */
+      .card {
+        height: 100%;
+
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        border-radius: 12px;
+        overflow: hidden;
+
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: column;
+      }
+      .cover {
+        position: relative;
+        overflow: hidden;
+      }
+      .cover img {
+        width: 100%;
+        transition: all 0.2s ease-in;
+      }
+      .cover:hover img {
+        transform: scale(1.1);
+      }
+
+      .badge {
+        display: inline-block;
+
+        font-size: 0.75rem;
+        padding: 2px 8px;
+
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+
+        font-weight: 900;
+      }
+      .cover .badge {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+      }
+
+      .badge.agency-type {
+        background-color: rgb(243, 232, 255);
+        color: rgb(147, 51, 234);
+      }
+      .badge.availability {
+        background-color: rgb(220, 252, 231);
+        color: rgb(22, 163, 74);
+        margin-bottom: 0.75em;
+      }
+      .badge.lecture-type {
+        background-color: rgb(243, 244, 246);
+        color: rgb(107, 114, 128);
+      }
+
+      article {
+        flex-grow: 1;
+        padding: 1em;
+
+        display: flex;
+        flex-direction: column;
+      }
+      article h1 {
+        color: rgb(31, 41, 55);
+        font-weight: 700;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* 말줄임 적용 */
+
+        margin-bottom: 0.75em;
+      }
+      article p {
+        color: rgb(156, 163, 175);
+        font-size: 0.75em;
+        line-height: 1rem;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      .wrap-content {
+        display: flex;
+        align-items: center;
+
+        padding: 8px 0;
+
+        margin: auto 0;
+      }
+
+      .generation {
+        font-size: 0.75rem;
+        margin-left: auto;
+      }
+
+      .btn {
+        color: #fff;
+        padding: 8px 0;
+        background-color: rgb(59, 130, 246);
+        border-radius: 8px;
+        display: block;
+
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body style="padding: 1rem">
+    <ul class="container-grid">
+      <li>
+        <div class="card">
+          <div class="cover">
+            <img src="./assets/bg-ocean.jpg" alt="ocean" />
+            <div class="badge agency-type">스팩</div>
+          </div>
+          <article class="card-content">
+            <div><div class="badge availability">신청가능</div></div>
+            <h1>Flutter 모바일 어플리케이션 개발 부트캠프과정</h1>
+            <p>4개월 간 나만의 어플 만들기!</p>
+            <div class="wrap-content">
+              <div class="badge lecture-type">취업연계과정</div>
+              <div class="generation">
+                기수 : 3기
+                <i
+                  class="fas fa-regular fa-rocket"
+                  style="color: #1943ac; font-size: 12px"
+                ></i>
+              </div>
+            </div>
+            <a href="#none" class="btn">더 알아보기</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <div class="cover">
+            <img src="./assets/bg-ocean.jpg" alt="ocean" />
+            <div class="badge agency-type">스팩</div>
+          </div>
+          <article>
+            <div><div class="badge availability">신청가능</div></div>
+            <h1>Flutter 모바일 어플리케이션 개발 부트캠프과정</h1>
+            <p>
+              4개월 간 스나이퍼팩토리와 함께 Flutter로 "내가 원하는
+              어플리케이션"을 만들어보는 시간입니다.
+            </p>
+            <div class="wrap-content">
+              <div class="badge lecture-type">취업연계과정</div>
+              <div class="generation">
+                기수 : 3기
+                <i
+                  class="fas fa-regular fa-rocket"
+                  style="color: #1943ac; font-size: 12px"
+                ></i>
+              </div>
+            </div>
+            <a href="#none" class="btn">더 알아보기</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <div class="cover">
+            <img src="./assets/bg-ocean.jpg" alt="ocean" />
+            <div class="badge agency-type">스팩</div>
+          </div>
+          <article>
+            <div><div class="badge availability">신청가능</div></div>
+            <h1>Flutter 모바일 어플리케이션 개발 부트캠프과정</h1>
+            <p>
+              4개월 간 스나이퍼팩토리와 함께 Flutter로 "내가 원하는
+              어플리케이션"을 만들어보는 시간입니다. Flutter와 Dart의 기초부터
+              심화, 응용까지 배워보고 나만의 어플리케이션으로 포트폴리오를
+              쌓아보세요. 최종적으로 기업의 실제 프로젝트까지 직접 진행할 수
+              있는 만큼의 개발자로 성장하세요!
+            </p>
+            <div class="wrap-content">
+              <div class="badge lecture-type">취업연계과정</div>
+              <div class="generation">
+                기수 : 3기
+                <i
+                  class="fas fa-regular fa-rocket"
+                  style="color: #1943ac; font-size: 12px"
+                ></i>
+              </div>
+            </div>
+            <a href="#none" class="btn">더 알아보기</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <div class="cover">
+            <img src="./assets/bg-ocean.jpg" alt="ocean" />
+            <div class="badge agency-type">스팩</div>
+          </div>
+          <article>
+            <div><div class="badge availability">신청가능</div></div>
+            <h1>Flutter 모바일 어플리케이션 개발 부트캠프과정</h1>
+            <p>4개월 간 나만의 어플 만들기!</p>
+            <div class="wrap-content">
+              <div class="badge lecture-type">취업연계과정</div>
+              <div class="generation">
+                기수 : 3기
+                <i
+                  class="fas fa-regular fa-rocket"
+                  style="color: #1943ac; font-size: 12px"
+                ></i>
+              </div>
+            </div>
+            <a href="#none" class="btn">더 알아보기</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <div class="cover">
+            <img src="./assets/bg-ocean.jpg" alt="ocean" />
+            <div class="badge agency-type">스팩</div>
+          </div>
+          <article>
+            <div><div class="badge availability">신청가능</div></div>
+            <h1>Flutter 모바일 어플리케이션 개발 부트캠프과정</h1>
+            <p>
+              4개월 간 스나이퍼팩토리와 함께 Flutter로 "내가 원하는
+              어플리케이션"을 만들어보는 시간입니다.
+            </p>
+            <div class="wrap-content">
+              <div class="badge lecture-type">취업연계과정</div>
+              <div class="generation">
+                기수 : 3기
+                <i
+                  class="fas fa-regular fa-rocket"
+                  style="color: #1943ac; font-size: 12px"
+                ></i>
+              </div>
+            </div>
+            <a href="#none" class="btn">더 알아보기</a>
+          </article>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <div class="cover">
+            <img src="./assets/bg-ocean.jpg" alt="ocean" />
+            <div class="badge agency-type">스팩</div>
+          </div>
+          <article>
+            <div><div class="badge availability">신청가능</div></div>
+            <h1>Flutter 모바일 어플리케이션 개발 부트캠프과정</h1>
+            <p>
+              4개월 간 스나이퍼팩토리와 함께 Flutter로 "내가 원하는
+              어플리케이션"을 만들어보는 시간입니다. Flutter와 Dart의 기초부터
+              심화, 응용까지 배워보고 나만의 어플리케이션으로 포트폴리오를
+              쌓아보세요. 최종적으로 기업의 실제 프로젝트까지 직접 진행할 수
+              있는 만큼의 개발자로 성장하세요!
+            </p>
+            <div class="wrap-content">
+              <div class="badge lecture-type">취업연계과정</div>
+              <div class="generation">
+                기수 : 3기
+                <i
+                  class="fas fa-regular fa-rocket"
+                  style="color: #1943ac; font-size: 12px"
+                ></i>
+              </div>
+            </div>
+            <a href="#none" class="btn">더 알아보기</a>
+          </article>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>

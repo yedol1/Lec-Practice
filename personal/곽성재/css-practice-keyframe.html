@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyframe</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        background-image: linear-gradient(
+          to right top,
+          #0048b4,
+          #0075d3,
+          #009de3,
+          #00c3e9,
+          #62e7ed
+        );
+
+        margin: 300px auto;
+
+        position: relative;
+      }
+
+      .square {
+        width: 30px;
+        height: 30px;
+        background-color: #ff806a;
+
+        position: absolute;
+        top: -50%;
+        left: -50%;
+
+        transform-origin: 150px 150px;
+
+        animation: rotate 5s ease-in-out infinite;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle">
+      <div class="square"></div>
+    </div>
+  </body>
+</html>
