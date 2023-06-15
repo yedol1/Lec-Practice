@@ -9,95 +9,138 @@
 
   <body>
     <header>
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="../images/나무위키.png" alt="나무위키로고" />
+      </div>
       <nav>
         <ul>
-          <li>최근 변경</li>
-          <li>최근 토론</li>
-          <li>특수 기능</li>
+          <li><a href="#">최근 변경</a></li>
+          <li><a href="#">최근 토론</a></li>
+          <li><a href="#">특수 기능</a></li>
         </ul>
       </nav>
       <div id="search"></div>
     </header>
 
-    <h1>안태경</h1>
-    <table class="table_main">
-      <tr>
-        <td>Front-end Developer</td>
-      </tr>
-      <tr>
-        <td>[유데미x스나이퍼팩토리]</td>
-      </tr>
-    </table>
+    <section>
+      <article class="before__main">
+        <div class="person__name">
+          <h1>안태경</h1>
+        </div>
 
-    <table>
-      <tr>
-        <td class="table_title">본명</td>
-        <td>안태경</td>
-      </tr>
-      <tr>
-        <td class="table_title">출생</td>
-        <td>199x년 x월 2x일 (??세)</td>
-      </tr>
-      <tr>
-        <td class="table_title">국적</td>
-        <td>대한민국</td>
-      </tr>
-      <tr>
-        <td class="table_title">학력</td>
-        <td>대학교 졸업</td>
-      </tr>
-      <tr>
-        <td class="table_title">MBTI</td>
-        <td>ESFP</td>
-      </tr>
-      <tr>
-        <td class="table_title">별명</td>
-        <td>안경태</td>
-      </tr>
-      <tr>
-        <td class="table_title">Github</td>
-        <td><a href="https://github.com/FDTK">github.com/FDTK</a></td>
-      </tr>
-    </table>
+        <table class="person__team">
+          <tr>
+            <td>Front-end Developer</td>
+          </tr>
+          <tr>
+            <td>[유데미x스나이퍼팩토리]</td>
+          </tr>
+        </table>
 
-    <section id="outline">
-      <h2>1. 개요</h2>
-      <hr />
-      <img src="images/안태경프로필.jpg" alt="안태경뒷모습사진" />
-      <p>사진 찍기를 좋아하는 프론트엔드 개발자 지망생</p>
+        <div class="aside_and_intro">
+          <aside class="aside__index">
+            <ol>
+              <li><a class="annotation" href="#">1.</a> 개요</li>
+              <li><a class="annotation" href="#">2.</a> (개발자) 공부 전</li>
+              <li><a class="annotation" href="#">3.</a> 개발 활동</li>
+              <li><a class="annotation" href="#">4.</a> 여담</li>
+            </ol>
+          </aside>
 
-      <h2>2. (개발자) 공부 전</h2>
-      <hr />
-      고등학교를 졸업한 후 모대학의 생명시스템학과에 진학했으나 편입으로
-      화공생명공학과로 전과하였다. 졸업 후 제약회사에서 연구원으로 1년간
-      재직하였지만 그 뒤 웹디자인을 배우면서 웹개발에 흥미가 생겨 본격적으로
-      개발 공부를 시작한다.<a href="#">[1]</a>
+          <div class="intro__table">
+            <table>
+              <tr>
+                <td class="table__title table_name" colspan="2">
+                  <span> 안태경 </span>
+                  <span>An Taekyung</span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <img src="../images/안태경프로필.jpg" class="person__photo" />
+                </td>
+              </tr>
+              <tr>
+                <td class="table__title">출생</td>
+                <td>199x년 x월 2x일 (??세)</td>
+              </tr>
+              <tr>
+                <td class="table__title">국적</td>
+                <td>대한민국</td>
+              </tr>
+              <tr>
+                <td class="table__title">학력</td>
+                <td>대학교 졸업</td>
+              </tr>
+              <tr>
+                <td class="table__title">MBTI</td>
+                <td>ESFP</td>
+              </tr>
+              <tr>
+                <td class="table__title">별명</td>
+                <td>안경태</td>
+              </tr>
+              <tr>
+                <td class="table__title">Github</td>
+                <td><a href="https://github.com/FDTK">github.com/FDTK</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="main">
+        <div>
+          <h2>1. 개요</h2>
+          <hr />
+          <div class="self_photo"></div>
+          <p>사진 찍기를 좋아하는 프론트엔드 개발자 지망생</p>
+        </div>
+
+        <div>
+          <h2>2. (개발자) 공부 전</h2>
+          <hr />
+          고등학교를 졸업한 후 모대학의 생명시스템학과에 진학했으나 편입으로
+          화공생명공학과로 전과하였다. 졸업 후 제약회사에서 연구원으로 1년간
+          재직하였지만 그 뒤 웹디자인을 배우면서 웹개발에 흥미가 생겨 본격적으로
+          개발 공부를 시작한다.<a class="annotation" href="#">[1]</a>
+        </div>
+
+        <div>
+          <h2>3. 개발 활동</h2>
+          <hr />
+          <dl>
+            <dt>Software Engineering Bootcamp 39기</dt>
+            <dd>- `JavaScript`, `React` 등 언어 및 프레임워크 학습</dd>
+            <dd>- 일일 알고리즘 문제 풀이</dd>
+            <dd>- 디스코드(Discord)를 이용한 동기들과의 지식 공유</dd>
+            <dd>- 페어 프로그래밍 : 커뮤니케이션 및 코드 리뷰</dd>
+            <dd>
+              - 팀 프로젝트<a class="annotation" href="#">[2]</a> :
+              스택오버플로우 클론 코딩, 웹사이트 개발
+            </dd>
+            <dt>반응형 앱&웹디자인 콘텐츠 제작</dt>
+            <dd>- `HTML`, `CSS`, `jquery`를 이용한 웹사이트 제작</dd>
+            <dd>- 포토샵, 일러스트레이터를 활용한 이미지 편집 및 드로잉</dd>
+            <dd>- 홈페이지 메인화면 드롭다운 메뉴, 좌우로 움직이는 배너</dd>
+          </dl>
+        </div>
+
+        <div>
+          <h2>4. 여담</h2>
+          <hr />
+          <ul>
+            <li>
+              - html을 많이 까먹었다.<a class="annotation" href="#">[3]</a>
+            </li>
+            <li>- 2021년, 코로나에 한 번 걸렸었다.</li>
+            <li>
+              - 해외여행을 매우 좋아한다.<a class="annotation" href="#">[4]</a>
+            </li>
+          </ul>
+        </div>
+      </article>
     </section>
-
-    <h2>3. 개발 활동</h2>
-    <hr />
-
-    <dl>
-      <dt><strong>Software Engineering Bootcamp 39기</strong></dt>
-      <dd>- `JavaScript`, `React` 등 언어 및 프레임워크 학습</dd>
-      <dd>- 일일 알고리즘 문제 풀이</dd>
-      <dd>- 디스코드(Discord)를 이용한 동기들과의 지식 공유</dd>
-      <dd>- 페어 프로그래밍 : 커뮤니케이션 및 코드 리뷰</dd>
-      <dd>- 팀 프로젝트 : 스택오버플로우 클론 코딩, 웹사이트 개발</dd>
-      <dt><strong>반응형 앱&웹디자인 콘텐츠 제작</strong></dt>
-      <dd>- `HTML`, `CSS`, `jquery`를 이용한 웹사이트 제작</dd>
-      <dd>- 포토샵, 일러스트레이터를 활용한 이미지 편집 및 드로잉</dd>
-      <dd>- 홈페이지 메인화면 드롭다운 메뉴, 좌우로 움직이는 배너</dd>
-    </dl>
-
-    <h2>4. 여담</h2>
-    <hr />
-    <ul>
-      <li>html을 많이 까먹었다.</li>
-      <li>2021년, 코로나에 한 번 걸렸었다.</li>
-      <li>해외여행을 매우 좋아한다.</li>
-    </ul>
 
     <footer>
       <span>namu.wiki</span> | <span><a href="#">Contáctenos</a></span> |
