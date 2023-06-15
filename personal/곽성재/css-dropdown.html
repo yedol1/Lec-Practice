@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS-Dropdown</title>
+    <style>
+      body {
+        color: #222;
+        line-height: 1.5em;
+      }
+
+      a {
+        color: #222;
+        text-decoration: none;
+      }
+
+      .dropdown {
+        /* border: 1px solid black; */
+        width: 250px;
+      }
+      .dropdown-btn {
+        /* display: inline-block; */
+        width: inherit;
+        padding: 10px;
+        font-size: 18px;
+        background-color: dodgerblue;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        border-radius: 10px;
+
+        display: none;
+
+        width: inherit;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown-content a {
+        display: block;
+        padding: 7px;
+        text-align: center;
+      }
+      .dropdown-content a:hover {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      <button class="dropdown-btn">DROP DOWM!!</button>
+      <div class="dropdown-content">
+        <a href="#none">naver</a>
+        <a href="#none">google</a>
+        <a href="#none">kakao</a>
+      </div>
+    </div>
+  </body>
+</html>
