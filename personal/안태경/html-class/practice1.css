@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* css reset */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header */
+header > table {
+  width: 100%;
+}
+
+/* body */
+table {
+  border: 2px black solid;
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px black solid;
+  padding: 5px;
+}
+table .table_title {
+  background-color: brown;
+  text-align: center;
+  color: white;
+}

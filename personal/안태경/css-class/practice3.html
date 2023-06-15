@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스나이퍼팩토리 메뉴</title>
+    <style>
+      /* css reset */
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      ul,
+      ol {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      /* body */
+      body {
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(blue, 10%, pink);
+        height: 2000px;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+      }
+      /* nav */
+      nav {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        min-width: 800px;
+        /* background-color: dodgerblue; */
+      }
+      nav img {
+        width: 100px;
+      }
+      nav > ul {
+        width: 100%;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        grid-gap: 30px;
+        color: white;
+        font-size: 0;
+      }
+      nav > ul > li {
+        text-align: center;
+        /* border: 1px solid black; */
+        height: 30px;
+        font-size: 16px;
+        :hover {
+          transition: 0.3s ease;
+          font-size: large;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAb4AAABxCAMAAACdmjYOAAAAvVBMVEWKt/////8AWf8AVP+FtP+Nuf+Itv8AUv8AV/9elv+Ds//6/P+Cr/95qP+uzf/C2P/l7v+cwv8ATv8AY/8QX//V5P+5x//I3f/c6P+pyf9Wjv91qv/1+f8ATf/x9v8mbP8ASP+00P+Wvv8jav/k7f/X5f8AXP9CgP86ev+BpP9Jhf81c/+gxP/M3//K2f+Hqf9qlP9sn/+8zv8AQv9ijf+kvv+ctP8/ef9Ki/9ymv92nf+WsP9sof+Dpv+hvP+xw+ryAAANgklEQVR4nNWde2OiOhPGI9cUraJbV7GWVmut2+pezrt7evZy3u//sQ4oIpdcZgKk8PytkMyPyUwmkJCeWP1wPj3MRrXpUL7DB2rARG9uncryppIeZzSE/7QGhfPDaLhfk0j2ehwEq9nc70v+Q4TXW61tYtUpb1y6CwbfgFQWAp+/+Av822pabmbB0dKOc2rl8UmzLGKPV1MRQy6+5VNgXy5Xl5wu4RsuXsG/raDwEKx5lo4YemS82vAIcvCFK9urG92xOR3C59tX/yuP9TVreQiIzNIRwvEoZP6dic8PoqehuqVYLekQvoBcTV6gP1aTP/Rgho4IBnPGBRj4loHXDDvSKXy+ZV+5D59ROHCa7z0LYTrPnpXG0DK+g424JlYdwhc49pVpfkdDgWozxkYnx7KLg3kRXxg0NGwmLegMPt8jET7qNuR+vpKdHWu8yV2mgG/TpOuRLuEbWjE+w20m+o2Iop0da5hNYvL4ps1FveTuXcEXRuaN8VGzAffz1xWcxHIyI2gO38yrbh6xOoNvmOAzzF01VGX1VxWdxNsvz9fK4hs1O3DG6go+PzbwER91R9WJ5S49rmxmyz5PIjL4Zs3T6wy+2PlO+AzzuQ5oqeZ2DfHJcZJn6oJv2vjISTqDzz/+9ITPeKiz9HKoKbuwguPlUny+DnpdwXd0vjO+Oud+o9qsbI37GXzLdcM550ndwOefwkiCz7iry/36nwZ29R4kssbLC75AQ+AjXcE3PD3KZ3xuTe7Xf5k8enXyC8/4DnrodQNfmIxwZ3x1zf2+Twz6WOMg5w0TfMs60iGIOoFvmDzLZ3w1ud+vu+hSZn38rH0/wTfU5HydwBeejZHiq8X9vjwcrxXxq2f8jOmd8OnJOmN1Ad+whK+Oud+PSdJNs574Z+3jqx7xDTUNnZ3A56c/veCrvvDw2Uh7Se9r4Heid8Snz/m6gG+VBpILPsOsuPCw/GBm+lE9/llBP8W30hX5uoAvvPw0g894QLxfyNB3N9sR874iv2PcS/BpSztJF/Blsrgsvmqllx8P+Z5E/KqMnym9GJ+WYmei1uMLMyNRFl+l0suTUeyiWSX+JfXOBF+gz/naj2/Iw1dl7vfilvtyb6nyS7KWBF+ocexsPb4wOxLl8FGq7H4/yvRifopmP2ctCb65vsSl/fhyWVwOn7r7hTfMDirmL5e4d8KnMe9sPb4wZ4s8PmX3+zJhd0cpf8nEvRO+scaxs+34hgJ8qi+dhXe8/inUXwr0Inw6Qx8HH1RN4/PzPy3go66S+31hRb7kitj8s0ivR0L5n2oUC9/jDVQfGsZXiCMFfGrRL6SCwQWZv+SylhO+jU7nY+K79qAazPzK2ixLLUgtXWhsEZ/x8ITH95sT+ZLxE8OvTK9HnnRmLkx8t+ABxGJ9ZFOfiklcCZ+C+4WP4shuwud/pZEzEpm+Pz7wv5vFFxYtUcJHJ+jo9/FOSA9Rf2HR6xFdr0mc1GZ8pRlUCZ+C+z0XL1ESMH9h0uuR0e2gLkXRySG2sC0txldyPgY+9NzvaSufFYHyF0bci0X+fnDrEt3e3L89LwY2H2GL8ZXLF2V8hvsVd9G/hYlLIkD+wqHXIz8gNwAqnpuZ5mT7fMVzwvbiC8smZOCjFLfu9woqSUjzF/bI2asZ37mPpkmfvxFWi9qLj1E7ZOBDRr95aaWILUn+wqXXIwG/KFBB1KSPPxmPVGvxhQzzsfBRFzP3Y641MO11L8gg+fR6ZGVCS45IUffxquSBrcXHKtyz8OGi3wLsG4L4x4t7scgM6N8Kou5b8Z3+tuJjlg6Z+Iw7RCNEBbOCuPxE9KJ5X3P44ki/yPNjV12gIhtGD2oRc9WMjQ/hfvMHxv954uQvgpGzF+O7bxBfFANfc0GZhe+fBVjrACz2LkQcLZmRh42PuvCNfVBpIXP+LqYX4VtI6wKVZN5cZxrFwnfjmjC5W/iOggPUOMtesmbjQ7jfb1xayMhfhCNnjG/2rUnvixu1/XPhp2251sPgYzsfDx81oO73HekZpfgnoxfhG4DNpyhKv6X82omPsycDB5/hLmCX7cMm7RkV3p/Iv9fCxkfeGsYXRYuUXyvx8Vasefiglc8lPivMzd8lce+Ez/nTyMQ9K2qe418r8fFe1uLhg5ZeQkziee7jJf/Mvs/Jx2dZkhXFGkS3Cb824uO+6MrFRyegq08V8F3WH6RxL8Fn/9Ns7nlqlNVafNw3Jbn4DPcn5MJ/yZZqmUryFxC9GB/xEMUBVbnPdkvx8d/V4uOjd5ACAm7al8p8jfIXedaS4rNfmnc/w7yy24mP/5oyHx/M/faKiznmvQXIWlJ8xGs8eYltb7US35L/fZUAHzUBCw+q+AzzEZC1XPDpcb8Xu434BPvwCfCB3E8d39sYNHQm+IjD/oqiXrm3dvvwLQXvKYjw0a3c/RRjX0TPcYD8Tvjsbzrcb9dCfKJNMEX4IJXPoVLmabhv5LxlGRBfNHxqCH/R5L1t+FiL7DB8gLdeFCcOu2ObjluWQfERq9F1o5PornX4hDvQCvEBKp8HFXzmW1qgAvA747Ovm5/80Ztb0i584i+LxfiodNl9o1B1MXfp7SHx74wvDn+N83MXdrvwibd/FuMz3F+Sq4d47zN3mecJEP9SfMdTC9C3w4k+tgvfUnwNCT468SWXRy/FubtcA+T8Lvii1jY9ftLtdavwSb4Ll+CTul9/h12u3RUyKWn+ksEXjZ9NvrZ0bN/Xcjnh/fAJCi4gfNSQ3OQrLp0v0ZPnL1l8Uf7S8PSd7tqET3bwgQyf1P3En2YWZe4YbZDkLzl8xB7cNxoA6bZFg6ck8gHw0a34Lqh5O5OeLP6RwukN9qJRfqbdHnzSU0ek+GSVT8zMwS2PnAB+RXyRA766zQE0B63BJ99NSo6PUvFt4LkgI+5d+PHjXwkfscnVh8Y80P3WGnzyI3/k+GSVT/A3DuazoHonyF/K+GIHXEQAGyFolitN74QPsJUbAB+9E879oF/fmc/ChvDzFxa+qOHW1T1twgUZu9K+Ez7AeVsAfJLks7wTJNsqYnqC+MfGFx/8Pli8um7khLVCZOzp/T74pGknEJ+k9AJaCHBFI6eYHw9f3Hrb/vOyu99Oavv43XUnby3BBznsDoJP4n6QmZ/5vJa3hZO/CPCdCDreYHB7XZvKRx2/C74+ZDsUED7x3G8qHz2FWctF7PxFjK9+ld+gamZLOgk+0EmTIHzG5JPoRtKypzTuncXMXzTjc5j4AEY66gZ+AJcY35JAthKD4aM3olvtJYUXMD32+KkZn7Uq4xustX9dCzvmFYbPmIiin2RPM0DWkjFemZ9ufOWDYN/h23bg9t1AfJSKniph8gLKWjL9Xxf56cZX/rTqHfABz1gG4hMnn76gBAnMWi5yivx04ys/qPrxQU8KheITz/1+cQtniLiXWqAwfupOXco7BujHBz3gHIrPcEXJp8/by9rF0yvx04vPKa8X6cfXB6WdBIGPuiL3+5cd/VBZS8YGOX568TEST/34oM4HxyeOfiFzZoTMWi7KxT/N+BhvJuvG1wfvHg3HJ577fWREP3TWclGWn158NmOzHN34wM6HwGdM/hXdsvwFgvmiZL/EDJfxUys+h/XZmmZ8iOPuEPjojWjuV1o3Uox7qR1SflrxMc9Q0IwP7nwYfJLK5//zL724LxVPP0356cRXmnS+Az7MeWkYfJQK1/1yw6dZld7FlDrxMSpm2vEhnA+FTzz3y50iRqvTS/lp9T7mLn9a8aEOekXho65wD8NRGv4qZS0ZWxzHT434WJM+3fhQvUXhMyZfhHc+n9teOe6lxoj5acTnsV9304kPXHA5CodPEv16vx9O9BRn6wxrROOnPnzWjGNSjfgwkQ+LT5J89nqf7gxaQ9ZykbMOteFz1pxeacSHcz4sPnHpJdLPSU1xL5Fja8TH65tGfDPcEedIfFL3632tmZ6vbfD0mJMGvfhQaSfB46M3ks9tkYO3WDE9XfgEe3TpwzfCOR8an6TyGQvp/yJbaJw4sOstmvFBF9lTofFRKt2/fmrVc1pp4g9a8DmslQbt+NAjFxqf4YrnfrE2dg0Gd5wkFunA5xBRTNCFDxv5VPBRU358RLivbHGHnGv/GvAdY+z748N3FI/PmPwGtGTkVRtArXX6kDSPL3Ozd8WHN5kCPmrIks9Y4bgCQCdb+W8cnzeUbC2jCZ9CPxXwySqfZx1UI6DjBdkHpGF8DuGUyi7Sg6+Pjnxq+OgH2Iv84cpRcEDHsvPvOTeLz9rLxxI9+A4KEy4VfFD36/X8PRZgBG+l8S1ri1elzkkLvj52zhdLCZ+89JLKDzyE8R2PjEpZRGP4HMspPiocy+rAp1TtUMInr3xmFI4ILIlxLG/P2n25GXyO461HIHh68KELLkep4aMmsOOn3k8D25OMohG78Yjt0w3gcyxrPZyD+6ADn1on1fAZLmTul1E4Ha6jsYqNMEJHxqsNf2MQD3ykoVRWJMder+aYoyv715YHFO5MxYuWtmcpyFk8TBR0N0Gd3HlsoH/Y23Zkv9iKCbfYnJExh1NftCnWPBjWpdVqNHvy0W2fHcBCX/ukcKqkp88f1aT2lIWbp9Ew2I/X8YK8PQ5WkTFlY9h/r6GZsbWWdscAAAAASUVORK5CYII="
+          alt="main_logo"
+        />
+      </div>
+
+      <ul>
+        <li><a href="#">스펙소개</a></li>
+        <li><a href="#">교육과정</a></li>
+        <li><a href="#">공지사항</a></li>
+        <li><a href="#">수료생 커뮤니티</a></li>
+        <li><a href="#">협력사</a></li>
+        <li><a href="#">스펙블로그</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
