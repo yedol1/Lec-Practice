@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .calculator {
+        width: 200px;
+        background-color: #d9d9d9;
+      }
+      .display {
+        background-color: #222;
+        height: 60px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 15px;
+        margin-bottom: 1px;
+        font-size: 24px;
+        color: #fff;
+      }
+      .row {
+        display: flex;
+      }
+      .orange {
+        background-color: #ed7117;
+      }
+      .button {
+        background-color: #555;
+        flex: 1;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1px;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="calculator">
+        <div class="display">0</div>
+        <div class="row">
+          <button class="button" id="clear">C</button>
+          <button class="button" id="negate" disabled>+/-</button>
+          <button class="button" id="percentage" disabled>%</button>
+          <button class="orange button" id="divide">÷</button>
+        </div>
+        <div class="row">
+          <button class="button" id="seven">7</button>
+          <button class="button" id="eight">8</button>
+          <button class="button" id="nine">9</button>
+          <button class="orange button" id="multiply">×</button>
+        </div>
+        <div class="row">
+          <button
+            class="button"
+            id="
+          four"
+          >
+            4
+          </button>
+          <button class="button" id="five">5</button>
+          <button class="button" id="six">6</button>
+          <button class="orange button" id="subtract">-</button>
+        </div>
+        <div class="row">
+          <button class="button" id="one">1</button>
+          <button class="button" id="two">2</button>
+          <button class="button" id="three">3</button>
+          <button class="orange button" id="add">+</button>
+        </div>
+        <div class="row">
+          <button class="button" id="zero" style="flex: 2">0</button>
+          <button class="button" id="decimal">.</button>
+          <button class="orange button" id="equal">=</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const display = document.querySelector(".display");
+      const buttons = document.querySelectorAll(".button");
+      let num1 = "";
+      let num2 = "";
+      let operator = null;
+      let resultDisplayed = false;
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          const buttonText = e.target.innerText;
+          if (buttonText === "C") {
+            clearDisplay();
+          } else if (["+", "-", "×", "÷"].includes(buttonText)) {
+            handleOperator(buttonText);
+          } else if (buttonText === "=") {
+            calculate();
+          } else {
+            appendNumber(buttonText);
+          }
+        });
+      });
+
+      function clearDisplay() {
+        display.textContent = "0";
+        num1 = "";
+        num2 = "";
+        operator = null;
+        resultDisplayed = false;
+      }
+
+      function handleOperator(buttonText) {
+        if (!num1) {
+          return;
+        }
+
+        operator = buttonText;
+        display.textContent = "0";
+      }
+
+      function calculate() {
+        if (!num1 || !num2) {
+          return;
+        }
+
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+        let result;
+
+        switch (operator) {
+          case "+":
+            result = num1 + num2;
+            break;
+          case "-":
+            result = num1 - num2;
+            break;
+          case "×":
+            result = num1 * num2;
+            break;
+          case "÷":
+            result = num1 / num2;
+            break;
+        }
+
+        display.textContent = result;
+        num1 = result;
+        num2 = "";
+        resultDisplayed = true;
+      }
+
+      function appendNumber(number) {
+        if (operator) {
+          num2 += number;
+          display.textContent = num2;
+        } else {
+          num1 += number;
+          display.textContent = num1;
+        }
+        resultDisplayed = false;
+      }
+    </script>
+  </body>
+</html>
