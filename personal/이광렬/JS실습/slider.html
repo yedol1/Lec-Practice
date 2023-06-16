@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>슬라이드</title>
+    <style>
+      .slider {
+        width: 400px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .slider .image-container {
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .slider .prev,
+      .slider .next {
+        position: absolute;
+        top: 50%;
+        border: none;
+        font-size: 2rem;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .slider .prev {
+        left: 10px;
+      }
+
+      .slider .next {
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <button class="prev">⟨</button>
+      <div class="image-container"></div>
+      <button class="next">⟩</button>
+    </div>
+
+    <script>
+      const imageContainer = document.querySelector(".image-container");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let index = 0;
+
+      function updateSlider() {
+        imageContainer.style.backgroundImage = `url('images/${index}.png')`;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        index--;
+        if (index < 0) index = 7;
+        updateSlider();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        index++;
+        if (index > 7) index = 0;
+        updateSlider();
+      });
+
+      updateSlider();
+    </script>
+  </body>
+</html>
