@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>랜덤이미지</title>
+  </head>
+  <body>
+    <button onClick="window.location.reload()">새로고침</button>
+    <div class="home"></div>
+  </body>
+  <script>
+    const people = [
+      "js_random_공유.jpg",
+      "js_random_김연아.jpg",
+      "js_random_조세호1.jpeg",
+      "js_random_조세호2.jpeg",
+      "js_random_랜덤1.jpg",
+      "js_random_랜덤2.jpg",
+      "js_random_진1.jpg",
+      "js_random_진2.jpg",
+    ];
+
+    const randomPerson = people[Math.floor(Math.random() * people.length)];
+
+    const etImg = document.createElement("img");
+    etImg.src = `../images/${randomPerson}`;
+    etImg.width = 500;
+
+    const homePage = document.querySelector(".home");
+    homePage.appendChild(etImg);
+  </script>
+</html>
