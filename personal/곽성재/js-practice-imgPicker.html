@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>랜덤 이미지 뽑기</title>
+    <style>
+      img {
+        display: block;
+      }
+      .container {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        overflow: hidden;
+      }
+      .container img {
+        width: inherit;
+        object-fit: contain;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <img
+        src="./assets/characters/christian-buehner-DItYlc26zVI-unsplash.jpg"
+      />
+      <img src="./assets/characters/jonas-kakaroto-KIPqvvTOC1s-unsplash.jpg" />
+      <img src="./assets/characters/조세호1.jpeg" />
+      <img src="./assets/characters/조세호2.jpeg" />
+      <img src="./assets/characters/김연아.jpg" />
+      <img src="./assets/characters/진1.webp" />
+      <img src="./assets/characters/진2.jpeg" />
+      <img src="./assets/characters/공유.webp" />
+    </section>
+
+    <script>
+      const $container = document.querySelector(".container");
+      const $imgs = $container.children;
+
+      let showingIdx = 0;
+
+      $container.addEventListener("click", () => {
+        let chosenIdx = Math.floor(Math.random() * $imgs.length);
+        while (chosenIdx === showingIdx) {
+          chosenIdx = Math.floor(Math.random() * $imgs.length);
+        }
+        for (let i = 0; i < $imgs.length; i++) {
+          const element = $imgs[i];
+          if (i !== chosenIdx) element.classList.add("hidden");
+          else element.classList.remove("hidden");
+        }
+        showingIdx = chosenIdx;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 슬라이더</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      button {
+        all: unset;
+        padding: 8px 12px;
+        border-radius: 10px;
+        background-color: dodgerblue;
+        color: #fff;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        display: block;
+      }
+      .wrapper {
+        width: 500px;
+        height: 500px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        overflow: hidden;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .container {
+        height: 100%;
+        display: flex;
+
+        transition: all 0.3s ease-in-out;
+      }
+      .container li {
+        width: 500px;
+      }
+      .container img {
+        width: inherit;
+        height: 500px;
+        object-fit: contain;
+      }
+      .btns {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="wrapper">
+      <ul class="container">
+        <li id="first">
+          <img src="./assets/characters/공유.webp" />
+        </li>
+        <li>
+          <img src="./assets/characters/진2.jpeg" />
+        </li>
+        <li>
+          <img src="./assets/characters/조세호2.jpeg" />
+        </li>
+        <li>
+          <img src="./assets/characters/조세호1.jpeg" />
+        </li>
+        <li>
+          <img src="./assets/characters/김연아.jpg" />
+        </li>
+        <li>
+          <img src="./assets/characters/진1.webp" />
+        </li>
+        <li>
+          <img
+            src="./assets/characters/christian-buehner-DItYlc26zVI-unsplash.jpg"
+          />
+        </li>
+        <li>
+          <img
+            src="./assets/characters/jonas-kakaroto-KIPqvvTOC1s-unsplash.jpg"
+          />
+        </li>
+      </ul>
+    </section>
+    <div class="btns">
+      <button class="prev">prev</button>
+      <button class="next">next</button>
+    </div>
+
+    <script>
+      const $container = document.querySelector(".container");
+      const $imgs = $container.children;
+      const firstImg = $container.firstElementChild.cloneNode(true);
+      firstImg.id = "last";
+      $container.appendChild(firstImg);
+
+      const $btnPrev = document.querySelector(".prev");
+      const $btnNext = document.querySelector(".next");
+
+      let showingIdx = 0;
+
+      $btnPrev.addEventListener("click", () => {
+        if (showingIdx === 0) return;
+        showingIdx--;
+        $container.style = `transform: translateX(${-500 * showingIdx}px);`;
+      });
+
+      $btnNext.addEventListener("click", () => {
+        if (showingIdx === $imgs.length - 1) return;
+        showingIdx++;
+        $container.style = `transform: translateX(${-500 * showingIdx}px);`;
+      });
+
+      $container.addEventListener("transitionend", () => {
+        console.log(showingIdx);
+        console.log($imgs[showingIdx].id);
+        if ($imgs[showingIdx].id === "last") {
+          $container.style.transition = "none";
+          $container.style.transform = "translateX(0px)";
+          showingIdx = 0;
+        }
+      });
+    </script>
+  </body>
+</html>

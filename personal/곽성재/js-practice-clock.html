@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시계</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .app {
+        background-color: rgb(42, 42, 42);
+        color: #fff;
+
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .app h1 {
+        font-size: 7vw;
+      }
+      .app p {
+        height: 9vw;
+        font-size: 9vw;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <h1>현재 시간</h1>
+      <p class="time">...Loading...</p>
+    </div>
+
+    <script>
+      const $time = document.querySelector(".time");
+      setInterval(() => {
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+        const AMPM = hours > 12 ? "PM" : "AM";
+        $time.textContent = `${AMPM} ${hours % 12} : ${minutes} : ${seconds}`;
+      }, 1000);
+    </script>
+  </body>
+</html>
