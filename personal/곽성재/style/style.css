@@ -380,13 +380,33 @@ body {
 }
 
 .sect-sixth .card-wrap {
-  width: 100vw;
+  width: calc(712 * 6px);
+  display: flex;
   margin-bottom: 49px;
+  animation: scroll 20s linear infinite;
+}
+.sect-sixth .card-wrap:hover {
+  animation-play-state: paused;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-2136px);
+  }
 }
 
 .sect-sixth .card-bg {
   width: 680px;
   padding: 60px;
+}
+.sect-sixth .card-bg:nth-child(1),
+.sect-sixth .card-bg:nth-child(2),
+.sect-sixth .card-bg:nth-child(3),
+.sect-sixth .card-bg:nth-child(4),
+.sect-sixth .card-bg:nth-child(5) {
+  margin-right: 32px;
 }
 .sect-sixth .card-bg img {
   /* 가로세로 길이를 지정하고 옵젝트핏 */
@@ -601,5 +621,9 @@ body {
     font-size: 36px;
     line-height: 43px;
     letter-spacing: -1.3468px;
+  }
+  .sect-sixth .card-bg {
+    width: 394px;
+    padding: 32px;
   }
 }
