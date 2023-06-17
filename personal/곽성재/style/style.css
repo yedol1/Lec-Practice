@@ -1,0 +1,605 @@
+@import url(./reset.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 500;
+}
+body {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-weight: 500;
+}
+:root {
+  --blue-color: #166999;
+  --black-color: #333d4b;
+  --light-black-color: #6b7684;
+  --mockup-text-width: 452px;
+}
+/* 이상한 여백 강제 없애기 */
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+/* screen reader only */
+.sr-only {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+/* text color */
+.blue {
+  color: var(--blue-color);
+}
+.black {
+  color: var(--black-color);
+}
+.light-black {
+  color: var(--light-black-color);
+}
+.white {
+  color: #fff;
+}
+/* text weight */
+.bold {
+  font-weight: 700;
+}
+/* text align */
+.center {
+  text-align: center;
+}
+/* text size */
+.txt-5xl {
+  font-size: 60px;
+  line-height: 1.2em;
+  letter-spacing: -2.24;
+}
+.txt-4xl {
+  font-size: 3rem;
+  line-height: 57.6px;
+  letter-spacing: -1.8px;
+}
+.txt-3xl {
+  font-size: 32px;
+  line-height: 1.2em;
+  letter-spacing: -0.9;
+}
+.txt-2xl {
+  font-size: 24px;
+  line-height: 1.2em;
+  letter-spacing: -0.9;
+}
+.txt-xl {
+  font-size: 21px;
+  line-height: 25.2px;
+  letter-spacing: -0.79px;
+}
+.txt-lg {
+  font-size: 18px;
+  line-height: 1.2em;
+  letter-spacing: -0.67;
+}
+.txt-base {
+  font-size: 1rem;
+  line-height: 1.2em;
+  letter-spacing: -0.6px;
+}
+.txt-sm {
+  font-size: 14px;
+  line-height: 24px;
+}
+.txt-xs {
+  font-size: 12px;
+  line-height: 1.2em;
+  letter-spacing: -0.45;
+}
+/* container */
+.container {
+  width: 976px;
+  margin-inline: auto;
+}
+.container-lg {
+  width: 1084px;
+  margin-inline: auto;
+}
+
+/* 버튼 */
+.btn-sm {
+  /* font-family: "Spoqa Han Sans Neo", "sans-serif"; */
+  padding: 8px 24px;
+  border-radius: 4px;
+}
+.btn-lg {
+  padding: 23px 27px;
+  border-radius: 8px;
+}
+.btn-mid {
+  padding: 21px 25px;
+  border-radius: 8px;
+}
+
+.btn-blue {
+  background-color: var(--blue-color);
+  color: #fff;
+}
+.btn-white {
+  background-color: #fff;
+  color: var(--blue-color);
+}
+
+/* flex */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-reverse {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* nav */
+.container-nav {
+  padding-block: 20px;
+  width: 1112px;
+  margin-inline: auto;
+}
+.logo {
+  display: flex;
+  margin-right: auto;
+}
+.logo img:first-child {
+  margin-right: 0.5rem;
+}
+.btn-wrap {
+  display: flex;
+}
+
+/* main banner */
+.header-banner {
+  height: 768px;
+  background-image: url(../assets/background-architecture.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 125px;
+}
+.header-banner .bg-wrap {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+}
+.header-banner .tit {
+  margin-bottom: 49px;
+}
+.header-banner a > span {
+  position: relative;
+}
+.header-banner a > span::after {
+  content: url(../assets/arrow-white.svg);
+  position: absolute;
+  right: -18px;
+  top: 1px;
+}
+
+/* card */
+.card {
+  width: 293px;
+}
+
+.card .img-card {
+  width: 100%;
+  height: 233px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.card .txt-xl {
+  margin-bottom: 1rem;
+}
+
+/* section - 1 */
+.sect-first {
+  margin-bottom: 192px;
+}
+.sect-first > .tit {
+  margin-bottom: 53px;
+}
+
+.sect-first .card:nth-child(1),
+.sect-first .card:nth-child(2) {
+  margin-right: 48px;
+}
+
+.sect-first .card-wrap {
+  margin-bottom: 25px;
+}
+.sect-first .card .desc {
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.sect-first a > span {
+  position: relative;
+}
+.sect-first a > span::after {
+  content: url(../assets/arrow-blue.svg);
+  position: absolute;
+  right: -18px;
+  top: 1px;
+}
+
+/* section - 2 */
+.sect-second {
+  margin-bottom: 239px;
+}
+
+.sect-second > .tit {
+  margin-bottom: 53px;
+}
+.sect-second .card .desc {
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.sect-second .card:nth-child(1),
+.sect-second .card:nth-child(2) {
+  margin-right: 48px;
+}
+
+/* section - 3 */
+.sect-third {
+  margin-bottom: 200px;
+}
+.sect-third > .tit {
+  margin-bottom: 69px;
+}
+.sect-third .card-wrap {
+  margin-bottom: 71px;
+}
+
+.sect-third .card:nth-child(1),
+.sect-third .card:nth-child(2),
+.sect-third .card:nth-child(4) {
+  margin-right: 48px;
+  margin-bottom: 57px;
+}
+.sect-third .card .hash {
+  display: block;
+  margin-bottom: 9px;
+}
+.sect-third .card .tit {
+  margin-bottom: 16px;
+}
+
+.sect-third a > span {
+  position: relative;
+}
+.sect-third a > span::after {
+  content: url(../assets/arrow-blue.svg);
+  position: absolute;
+  right: -18px;
+  top: 1px;
+}
+
+/* section - 4 */
+.sect-fourth {
+  margin-bottom: 172px;
+}
+/* device */
+.mockup-wrap {
+  margin-bottom: 170px;
+  justify-content: space-between;
+}
+
+.mockup-wrap .text-wrap {
+  width: var(--mockup-text-width);
+}
+.mockup-wrap .text-wrap .tit {
+  margin-top: 21px;
+  /* text-align: start; */
+}
+.mockup-wrap .text-wrap .desc {
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.mockup-wrap .text-wrap .txt-4xl {
+  margin-bottom: 34px;
+}
+
+.mockup-wrap .text-wrap .img-message {
+  margin: 24px 0 17px 0;
+}
+
+/* sevtion - 5 */
+.sect-fifth {
+  margin-bottom: 181px;
+}
+.sect-fifth > .tit {
+  margin-bottom: 37px;
+}
+.card-mid {
+  width: 340px;
+  background: #f2f3f4;
+  border-radius: 16px;
+  padding: 30px 24px 24px 24px;
+}
+.sect-fifth .card-mid:nth-child(1),
+.sect-fifth .card-mid:nth-child(2) {
+  margin-right: 32px;
+}
+.sect-fifth .card-mid .tit {
+  margin-bottom: 24px;
+}
+.card-mid .txt-base {
+  line-height: 19.2px;
+}
+
+.card-mid .txt-base.desc {
+  margin-bottom: 42px;
+  font-weight: 400;
+}
+.card-mid .txt-base.price {
+  margin-top: 15px;
+  margin-bottom: 26px;
+}
+
+.card-mid .btn-lg {
+  width: 100%;
+  padding-block: 24px;
+  text-align: center;
+}
+
+.sect-fifth .card-wrap {
+  margin-bottom: 36px;
+}
+
+/* 회색배경이 있는 카드 */
+.card-bg {
+  background-color: #f2f3f4;
+  border-radius: 16px;
+}
+
+/* section 6 */
+.sect-sixth {
+  margin-bottom: 136px;
+}
+
+.sect-sixth .tit {
+  margin-bottom: 37px;
+}
+
+.sect-sixth .card-wrap {
+  width: 100vw;
+  margin-bottom: 49px;
+}
+
+.sect-sixth .card-bg {
+  width: 680px;
+  padding: 60px;
+}
+.sect-sixth .card-bg img {
+  /* 가로세로 길이를 지정하고 옵젝트핏 */
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1rem;
+}
+.sect-sixth .card-bg .name-wrap {
+  margin-bottom: 34px;
+}
+
+.sect-sixth .card-bg .name-wrap div:first-child {
+  margin-bottom: 3px;
+}
+
+.sect-sixth .card-bg .description {
+  line-height: 32px;
+}
+
+/* footer */
+.footer-banner {
+  background-color: var(--blue-color);
+  height: 608px;
+  margin-bottom: 26px;
+}
+
+.footer-banner .tit {
+  margin-bottom: 62px;
+  text-align: center;
+  font-weight: 700;
+}
+.footer-info {
+  width: 1140px;
+  margin-inline: auto;
+  margin-bottom: 24px;
+}
+.footer-info .tit {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 1024px) {
+  .txt-4xl {
+    font-size: 32px;
+    line-height: 1.2em;
+    letter-spacing: -0.9;
+  }
+  .container {
+    width: 634px;
+  }
+  .container-lg {
+    width: 712px;
+  }
+  .container-nav {
+    width: 671px;
+  }
+  .container-nav .btn-wrap li:nth-child(1) {
+    display: none;
+  }
+  .footer-info {
+    width: 734px;
+  }
+  .header-banner {
+    height: 400px;
+    margin-bottom: 100px;
+  }
+  .sect-first {
+    margin-bottom: 148px;
+  }
+  .sect-first .card:nth-child(2) {
+    margin-right: 0;
+    margin-bottom: 48px;
+  }
+  .sect-second {
+    margin-bottom: 148px;
+  }
+  .sect-second .card:nth-child(2) {
+    margin-right: 0;
+    margin-bottom: 48px;
+  }
+  .sect-third {
+    margin-bottom: 148px;
+  }
+  .sect-third .card:nth-child(2),
+  .sect-third .card:nth-child(4) {
+    margin-right: 0;
+  }
+  .sect-third .card:nth-child(3) {
+    margin-right: 48px;
+  }
+  .sect-fourth {
+    margin-bottom: 160px;
+  }
+  .mockup-wrap {
+    justify-content: center;
+  }
+  .mockup-wrap .img-screen {
+    margin-bottom: 142px;
+  }
+  .mockup-wrap .text-wrap {
+    text-align: center;
+  }
+  .mockup-wrap .text-wrap .txt-4xl {
+    font-size: 3rem;
+    line-height: 57.6px;
+    letter-spacing: -1.8px;
+  }
+  .sect-fifth {
+    margin-bottom: 150px;
+  }
+  .sect-fifth .card-mid:nth-child(1) {
+    margin-bottom: 32px;
+  }
+
+  .sect-fifth .card-mid:nth-child(2) {
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .txt-5xl {
+    font-size: 3rem;
+    line-height: 57.6px;
+    letter-spacing: -1.8px;
+  }
+  .header-banner {
+    height: 307px;
+    margin-bottom: 84px;
+  }
+  .footer-info {
+    width: 680px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hide-mobile {
+    display: none;
+  }
+  .txt-4xl {
+    font-size: 21px;
+    line-height: 25.2px;
+    letter-spacing: -0.79px;
+  }
+  .container-nav {
+    width: 432px;
+  }
+  .container {
+    width: 408px;
+  }
+  .container-lg {
+    width: 394px;
+  }
+  .flex {
+    justify-content: center;
+  }
+  .header-banner {
+    height: 192px;
+    margin-bottom: 64px;
+  }
+  .sect-first {
+    margin-bottom: 84px;
+  }
+  .sect-first .card:nth-child(1) {
+    margin-right: 0;
+    margin-bottom: 48px;
+  }
+  .sect-second {
+    margin-bottom: 84px;
+  }
+  .sect-second .card:nth-child(1) {
+    margin-right: 0;
+    margin-bottom: 48px;
+  }
+  .sect-third {
+    margin-bottom: 77px;
+  }
+
+  .sect-third .card:nth-child(1),
+  .sect-third .card:nth-child(3) {
+    margin-right: 0;
+    margin-bottom: 57px;
+  }
+  .sect-fourth {
+    margin-bottom: 109px;
+  }
+  .sect-fifth {
+    margin-bottom: 53px;
+  }
+  .sect-fifth .card-mid:nth-child(1) {
+    margin-right: 0;
+  }
+  .sect-sixth {
+    margin-bottom: 48px;
+  }
+  .mockup-wrap {
+    margin-bottom: 150px;
+  }
+  .mockup-wrap .text-wrap .txt-4xl {
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: -1.346px;
+  }
+  .mockup-wrap .text-wrap .txt-2xl {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.6734px;
+  }
+  .txt-5xl {
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: -1.3468px;
+  }
+}
