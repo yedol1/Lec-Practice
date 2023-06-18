@@ -342,12 +342,10 @@
   let slides = Array.from(carousel.children);
   let slideWidth = slides[0].getBoundingClientRect().width;
 
-  // Arrange the slides next to one another
   slides.forEach((slide, index) => {
     slide.style.left = slideWidth * index + "px";
   });
 
-  // Prev button
   document.querySelector("#prevBtn").addEventListener("click", (e) => {
     carousel.prepend(carousel.lastElementChild);
     carousel.style.transition = "none";
@@ -362,7 +360,6 @@
     }, 0);
   });
 
-  // Next button
   document.querySelector("#nextBtn").addEventListener("click", (e) => {
     carousel.appendChild(carousel.firstElementChild);
     carousel.style.transition = "none";
