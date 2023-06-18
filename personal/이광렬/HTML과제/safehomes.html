@@ -5,38 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>세이프 홈즈</title>
+    <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
-      <div class="container">
-        <div id="branding">
-          <h1><a href="#">세이프홈즈</a></h1>
-        </div>
-        <nav>
-          <ul>
-            <li class="current"><a href="#">문의하기</a></li>
-            <li><button>시작하기</button></li>
-          </ul>
-        </nav>
+      <div id="branding">
+        <h1 class="sr-only">세이프홈즈</h1>
+        <img src="./images/logo.svg" alt="logo" />
       </div>
+      <nav>
+        <ul>
+          <li class="current"><a href="#">문의하기</a></li>
+          <li><button>시작하기</button></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <!-- 첫번째 섹션 -->
-      <section>
+      <section id="banner" class="dim">
         <h2>내 집 보증금, 경매로 날아가면 어떻게 하지?</h2>
-        <a href="#">지금 걱정 해결하기</a>
+        <a href="#"
+          >지금 걱정 해결하기
+          <img src="./images/link.svg" alt="링크 타고 들어가기" />
+        </a>
       </section>
       <!-- 두번째 섹션 -->
-      <section>
+      <section id="main-sec" class="card-style-one">
         <h2>세이프홈즈, 전/월세 보증금 지킴이 서비스입니다.</h2>
         <ul class="card-list">
           <li class="card-item">
             <a href="#">
               <article>
                 <figure>
-                  <img src="" alt="보증금 지킴이 리포트 썸네일" />
-                  <figcaption>등기부등본 등을 분석한 보증금 지킴이 리포트를 상징하는 썸네일 사진</figcaption>
+                  <img src="./images/bg.png" alt="보증금 지킴이 리포트 썸네일" />
+                  <figcaption class="sr-only">등기부등본 등을 분석한 보증금 지킴이 리포트를 상징하는 썸네일 사진</figcaption>
                 </figure>
                 <h3>등기부등본 등을 분석한 보증금 지킴이 리포트</h3>
                 <p>내 보증금을 어떻게 지킬 수 있을까? 라는 단계를 거쳐서 여러분들에게 계약전 보증금 지킴이 리포트 제공</p>
@@ -47,8 +50,8 @@
             <a href="#">
               <article>
                 <figure>
-                  <img src="" alt="체크리스트 썸네일" />
-                  <figcaption>보증금 보호를 위한 Check-List를 상징하는 썸네일 사진</figcaption>
+                  <img src="./images/bg.png" alt="체크리스트 썸네일" />
+                  <figcaption class="sr-only">보증금 보호를 위한 Check-List를 상징하는 썸네일 사진</figcaption>
                 </figure>
                 <h3>보증금 보호를 위한 Check-List</h3>
                 <p>내 보증금을 어떻게 지킬 수 있을까? 라는 단계를 거쳐서 여러분들에게 계약전 보증금 지킴이 리포트 제공</p>
@@ -59,8 +62,8 @@
             <a href="#">
               <article>
                 <figure>
-                  <img src="" alt="알림 서비스 썸네일" />
-                  <figcaption>등기부등본 변동에 따른 실시간 알림 서비스를 상징하는 썸네일 사진</figcaption>
+                  <img src="./images/bg.png" alt="알림 서비스 썸네일" />
+                  <figcaption class="sr-only">등기부등본 변동에 따른 실시간 알림 서비스를 상징하는 썸네일 사진</figcaption>
                 </figure>
                 <h3>등기부등본 변동에 따른 실시간 알림 서비스</h3>
                 <p>내 보증금을 어떻게 지킬 수 있을까? 라는 단계를 거쳐서 여러분들에게 계약전 보증금 지킴이 리포트 제공</p>
@@ -68,19 +71,19 @@
             </a>
           </li>
         </ul>
-        <a href="#">지금 바로 사용하기</a>
+        <a href="#">지금 바로 사용하기<img src="./images/gr-link.svg" alt="링크 타고 들어가기" /></a>
       </section>
       <!-- 세번째 섹션 -->
 
-      <section>
+      <section id="main-trd" class="card-style-one">
         <h2>부동산을 찾았지만 망설이고 계시나요?</h2>
         <ul class="card-list">
           <li class="card-item">
             <a href="#">
               <article>
                 <figure>
-                  <img src="" alt="첫번째 리스트 썸네일" />
-                  <figcaption>부동산 중개 업자는 항상 괜찮다고 한다. 과연 그럴까?를 상징하는 썸네일 사진</figcaption>
+                  <img src="./images/bg.png" alt="첫번째 리스트 썸네일" />
+                  <figcaption class="sr-only">부동산 중개 업자는 항상 괜찮다고 한다. 과연 그럴까?를 상징하는 썸네일 사진</figcaption>
                 </figure>
                 <h3>부동산 중개 업자는 항상 괜찮다고 한다. 과연 그럴까?</h3>
                 <p>내 보증금을 어떻게 지킬 수 있을까? 라는 단계를 거쳐서 여러분들에게 계약전 보증금 지킴이 리포트 제공</p>
@@ -91,8 +94,8 @@
             <a href="#">
               <article>
                 <figure>
-                  <img src="" alt="두번째 리스트 썸네일" />
-                  <figcaption>절차가 이것저것 너무 많은데 빠뜨린 절차가 있지 않을까?를 상징하는 썸네일 사진</figcaption>
+                  <img src="./images/bg.png" alt="두번째 리스트 썸네일" />
+                  <figcaption class="sr-only">절차가 이것저것 너무 많은데 빠뜨린 절차가 있지 않을까?를 상징하는 썸네일 사진</figcaption>
                 </figure>
                 <h3>절차가 이것저것 너무 많은데 빠뜨린 절차가 있지 않을까?</h3>
                 <p>내 보증금을 어떻게 지킬 수 있을까? 라는 단계를 거쳐서 여러분들에게 계약전 보증금 지킴이 리포트 제공</p>
@@ -103,8 +106,8 @@
             <a href="#">
               <article>
                 <figure>
-                  <img src="" alt="세번째 리스트 썸네일" />
-                  <figcaption>평생 힘들게 모은 보증금을 나중에 돌려 받지 못 하면 ..를 상징하는 썸네일 사진</figcaption>
+                  <img src="./images/bg.png" alt="세번째 리스트 썸네일" />
+                  <figcaption class="sr-only">평생 힘들게 모은 보증금을 나중에 돌려 받지 못 하면 ..를 상징하는 썸네일 사진</figcaption>
                 </figure>
                 <h3>평생 힘들게 모은 보증금을 나중에 돌려 받지 못 하면 ..</h3>
                 <p>내 보증금을 어떻게 지킬 수 있을까? 라는 단계를 거쳐서 여러분들에게 계약전 보증금 지킴이 리포트 제공</p>
@@ -114,7 +117,7 @@
         </ul>
       </section>
       <!-- 네번째 섹션 -->
-      <section>
+      <section id="main-4th" class="card-style-two">
         <h2>세이프홈즈, 어떻게 내 보증금을 지킬 수 있을까요?</h2>
         <ul class="card-list">
           <li class="card-item">
@@ -163,56 +166,63 @@
             </a>
           </li>
         </ul>
-        <a href="#">조금 더 알아보기</a>
+        <a href="#">조금 더 알아보기<img src="./images/gr-link.svg" alt="링크 타고 들어가기" /></a>
       </section>
       <!-- 다섯번째 섹션 -->
-      <section>
+      <section id="main-5th" class="card-style-three">
         <h2 class="sr-only">앱의 코어 기능</h2>
         <ul class="card-list">
           <li class="card-item">
             <a href="#">
               <article>
-                <img src="" alt="앱 구동 이미지" />
-                <h3>리포트</h3>
-                <h2>등기부 등본 등을 분석한 보증금 지킴이 리포트</h2>
-                <p>어려운 부동산 법률 용어가 아닌, 누구나 쉽게 이해 할 수 있는 보증금 지킴이 리포트 제공</p>
+                <img src="./images/mockup1.png" alt="앱 구동 이미지" />
+                <div>
+                  <h3>리포트</h3>
+                  <h2>등기부 등본 등을 분석한 보증금 지킴이 리포트</h2>
+                  <p>어려운 부동산 법률 용어가 아닌, 누구나 쉽게 이해 할 수 있는 보증금 지킴이 리포트 제공</p>
+                </div>
               </article>
             </a>
           </li>
           <li class="card-item">
             <a href="#">
               <article>
-                <img src="" alt="앱 구동 이미지" />
-                <h3>절차</h3>
-                <h2>보증금 보호를 위한, 체크리스트</h2>
-                <p>전세 사기 당하지 않기 위해 반드시 확인해야 할 체크리스트를 제공합니다.</p>
+                <div>
+                  <h3>절차</h3>
+                  <h2>보증금 보호를 위한, 체크리스트</h2>
+                  <p>전세 사기 당하지 않기 위해 반드시 확인해야 할 체크리스트를 제공합니다.</p>
+                </div>
+                <img src="./images/mockup2.png" alt="앱 구동 이미지" />
               </article>
             </a>
           </li>
           <li class="card-item">
             <a href="#">
               <article>
-                <img src="" alt="앱 구동 이미지" />
-                <h3>알림</h3>
-                <h2>등기부 등본 변동에 따른 실시간 알리미</h2>
-                <p>어떤 말도 듣지 못 했는데 집 주인이 바뀌었다고? 세이프홈즈가 즉각 알려드립니다.</p>
-                <img src="" alt="메시지 앱 이미지" />
+                <img src="./images/mockup3.png" alt="앱 구동 이미지" />
+                <div>
+                  <h3>알림</h3>
+                  <h2>등기부 등본 변동에 따른 실시간 알리미</h2>
+                  <p>어떤 말도 듣지 못 했는데 집 주인이 바뀌었다고? 세이프홈즈가 즉각 알려드립니다.</p>
+                </div>
               </article>
             </a>
           </li>
         </ul>
-        <a href="#">조금 더 알아보기</a>
       </section>
       <!-- 여섯번째 섹션 -->
-      <section>
-        <h2 class="sr-only">세이프홈즈, 서비스 가격은 어떻게 될까요?</h2>
+      <section id="main-6th" class="card-style-four">
+        <h2>세이프홈즈, 서비스 가격은 어떻게 될까요?</h2>
         <ul class="card-list">
           <li class="card-item">
             <a href="#">
               <article>
-                <h3>전/월세 보증금 지킴이 리포트</h3>
-                <p>해당 플랜은 여러분을 위해 리포트를 제공합니다. 실제로 이 리포트는 언제 어디서든지 사용할 수 있고 그렇습니다.</p>
-                <h4>80,000 KRW</h4>
+                <h3>
+                  전/월세 보증금 <br />
+                  지킴이 리포트
+                </h3>
+                <h4>해당 플랜은 여러분을 위해 리포트를 제공합니다. 실제로 이 리포트는 언제 어디서든지 사용할 수 있고 그렇습니다.</h4>
+                <h5>80,000 KRW</h5>
                 <p>1회 50,000원 / 1주 80,000원</p>
                 <button>지금 바로 사용하기</button>
               </article>
@@ -222,9 +232,12 @@
           <li class="card-item">
             <a href="#">
               <article>
-                <h3>등기부 등본 변동 알림 서비스</h3>
-                <p>해당 플랜은 여러분을 위해 리포트를 제공합니다. 실제로 이 리포트는 언제 어디서든지 사용할 수 있고 그렇습니다.</p>
-                <h4>50,000 KRW</h4>
+                <h3>
+                  등기부 등본 변동 <br />
+                  알림 서비스
+                </h3>
+                <h4>해당 플랜은 여러분을 위해 리포트를 제공합니다. 실제로 이 리포트는 언제 어디서든지 사용할 수 있고 그렇습니다.</h4>
+                <h5>50,000 KRW</h5>
                 <p>1년 50,000원 / 2년 80,000원</p>
                 <button>지금 바로 사용하기</button>
               </article>
@@ -233,27 +246,35 @@
           <li class="card-item">
             <a href="#">
               <article>
-                <h3>올 패키지 (지킴이 리포트 + 알림)</h3>
-                <p>해당 플랜은 여러분을 위해 리포트를 제공합니다. 실제로 이 리포트는 언제 어디서든지 사용할 수 있고 그렇습니다.</p>
-                <h4>100,000 KRW</h4>
+                <h3 class="plan3">
+                  올 패키지<br />
+                  (지킴이 리포트 + 알림)
+                </h3>
+                <h4>해당 플랜은 여러분을 위해 리포트를 제공합니다. 실제로 이 리포트는 언제 어디서든지 사용할 수 있고 그렇습니다.</h4>
+                <h5>100,000 KRW</h5>
                 <p>1주 + 2년 100,000원</p>
                 <button>지금 바로 사용하기</button>
               </article>
             </a>
           </li>
         </ul>
-        <a href="#">원하시는 플랜이 없다면 문의주세요!</a>
+        <a href="#">원하시는 플랜이 없다면 문의주세요!<img src="./images/gr-link.svg" alt="링크 타고 들어가기" /></a>
       </section>
       <!-- 일곱번째 섹션 -->
-      <section>
-        <h2 class="sr-only">세이프홈즈, 없었으면 큰일 날 뻔했어요!</h2>
-        <ul class="card-list">
-          <li class="card-item">
+      <section id="main-7th" class="review-card">
+        <h2>세이프홈즈, 없었으면 큰일 날 뻔했어요!</h2>
+        <button id="prevBtn"><img src="./images/gr-link.svg" alt="" /></button>
+        <ul class="carousel-container card-list">
+          <li class="carousel-slide card-item">
             <a href="#">
               <article>
-                <img src="" alt="프로필 이미지" />
-                <h3>홍길동님</h3>
-                <h4>전/월세 보증금 지킴이 리포트</h4>
+                <div class="prof-row">
+                  <img src="./images/0.png" alt="프로필 이미지" />
+                  <div class="prof-col">
+                    <h3>홍길동님</h3>
+                    <h4>전/월세 보증금 지킴이 리포트</h4>
+                  </div>
+                </div>
                 <p>
                   공인중개사가 계약을 너무 서두르는 느낌이 들어 불안했는데, 세이프홈즈를 통해서 리포트를 받아보니 아니나 다를까 위험요소가 너무 큰 매물이었습니다. 근저당이 너무 높게 잡혀있었고,
                   보증보험 적합 대상도 아니라 경매로 넘어가게 되면 보증금을 돌려받기 힘들 것 같아 해당 매물 계약을 포기하고, 더 안전한 매물을 찾아서 계약할 수 있었습니다.
@@ -261,12 +282,16 @@
               </article>
             </a>
           </li>
-          <li class="card-item">
+          <li class="carousel-slide card-item">
             <a href="#">
               <article>
-                <img src="" alt="프로필 이미지" />
-                <h3>홍길동님</h3>
-                <h4>전/월세 보증금 지킴이 리포트</h4>
+                <div class="prof-row">
+                  <img src="./images/0.png" alt="프로필 이미지" />
+                  <div class="prof-col">
+                    <h3>이광렬님</h3>
+                    <h4>전/월세 보증금 지킴이 리포트</h4>
+                  </div>
+                </div>
                 <p>
                   공인중개사가 계약을 너무 서두르는 느낌이 들어 불안했는데, 세이프홈즈를 통해서 리포트를 받아보니 아니나 다를까 위험요소가 너무 큰 매물이었습니다. 근저당이 너무 높게 잡혀있었고,
                   보증보험 적합 대상도 아니라 경매로 넘어가게 되면 보증금을 돌려받기 힘들 것 같아 해당 매물 계약을 포기하고, 더 안전한 매물을 찾아서 계약할 수 있었습니다.
@@ -274,12 +299,16 @@
               </article>
             </a>
           </li>
-          <li class="card-item">
+          <li class="carousel-slide card-item">
             <a href="#">
               <article>
-                <img src="" alt="프로필 이미지" />
-                <h3>홍길동님</h3>
-                <h4>전/월세 보증금 지킴이 리포트</h4>
+                <div class="prof-row">
+                  <img src="./images/0.png" alt="프로필 이미지" />
+                  <div>
+                    <h3>누군가님</h3>
+                    <h4>전/월세 보증금 지킴이 리포트</h4>
+                  </div>
+                </div>
                 <p>
                   공인중개사가 계약을 너무 서두르는 느낌이 들어 불안했는데, 세이프홈즈를 통해서 리포트를 받아보니 아니나 다를까 위험요소가 너무 큰 매물이었습니다. 근저당이 너무 높게 잡혀있었고,
                   보증보험 적합 대상도 아니라 경매로 넘어가게 되면 보증금을 돌려받기 힘들 것 같아 해당 매물 계약을 포기하고, 더 안전한 매물을 찾아서 계약할 수 있었습니다.
@@ -288,18 +317,60 @@
             </a>
           </li>
         </ul>
-        <a href="#">후기 진위여부 파악하러 가기</a>
+        <button id="nextBtn"><img src="./images/gr-link.svg" alt="" /></button>
+        <a href="#">후기 진위여부 파악하러 가기 <img src="./images/gr-link.svg" alt="링크 타고 들어가기" /></a>
       </section>
     </main>
     <footer>
       <section>
-        <h2>내 보증금, 안전하게 보호하려면 지금 시작하세요</h2>
-        <button>지금 바로 사용하기</button>
+        <div>
+          <h2>내 보증금, 안전하게 보호하려면 지금 시작하세요</h2>
+          <button>지금 바로 사용하기</button>
+        </div>
       </section>
-      <h3>(주)세이프홈즈</h3>
-      <p>사업자 등록 번호 : 250-26-01109 | 대표 : 정동훈</p>
-      <p>경기도 성남시 수정구 대왕판교로 815 기업지원허브 혁신기술존 260-3호</p>
-      <p>문의 메일 : safehomes.kr@gmail.com</p>
+      <div>
+        <h3>(주)세이프홈즈</h3>
+        <p>사업자 등록 번호 : 250-26-01109 | 대표 : 정동훈</p>
+        <p>경기도 성남시 수정구 대왕판교로 815 기업지원허브 혁신기술존 260-3호</p>
+        <p>문의 메일 : safehomes.kr@gmail.com</p>
+      </div>
     </footer>
   </body>
 </html>
+<script>
+  const carousel = document.querySelector(".carousel-container");
+  let slides = Array.from(carousel.children);
+  let slideWidth = slides[0].getBoundingClientRect().width;
+
+  slides.forEach((slide, index) => {
+    slide.style.left = slideWidth * index + "px";
+  });
+
+  document.querySelector("#prevBtn").addEventListener("click", (e) => {
+    carousel.prepend(carousel.lastElementChild);
+    carousel.style.transition = "none";
+    let slides = Array.from(carousel.children);
+    slides.forEach((slide, index) => {
+      slide.style.left = slideWidth * index + "px";
+    });
+    carousel.style.transform = `translateX(-${slideWidth}px)`;
+    setTimeout(() => {
+      carousel.style.transition = "all 0.5s";
+      carousel.style.transform = "translateX(0)";
+    }, 0);
+  });
+
+  document.querySelector("#nextBtn").addEventListener("click", (e) => {
+    carousel.appendChild(carousel.firstElementChild);
+    carousel.style.transition = "none";
+    let slides = Array.from(carousel.children);
+    slides.forEach((slide, index) => {
+      slide.style.left = slideWidth * index + "px";
+    });
+    carousel.style.transform = `translateX(-${slideWidth}px)`;
+    setTimeout(() => {
+      carousel.style.transition = "all 0.5s";
+      carousel.style.transform = "translateX(0)";
+    }, 0);
+  });
+</script>
