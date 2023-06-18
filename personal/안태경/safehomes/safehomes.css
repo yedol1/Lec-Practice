@@ -1,1 +1,401 @@
 @import "../reset.css";
+* {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  box-sizing: border-box;
+}
+:root {
+  --maincolor: #0e7159;
+  --basic-gray-01: #333d4b;
+  --basic-gray-02: #6b7684;
+  --basic-gray-03: #f2f3f4;
+  --basic-gray-04: #f9fafb;
+}
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+h3 {
+  color: var(--maincolor);
+  font-weight: bold;
+  font-size: 48px;
+  margin: 58px 0;
+}
+
+/* body */
+body,
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: violet;
+  width: 100%;
+}
+section {
+  margin-top: 72px;
+}
+
+/* header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+
+  height: 70px;
+  width: 100%;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    width: 1112px;
+  }
+}
+nav {
+  > button {
+    padding: 8px 24px;
+    font-weight: bold;
+  }
+  > button:first-child {
+    color: var(--basic-gray-01);
+  }
+  > button:nth-child(2) {
+    color: white;
+    background-color: var(--maincolor);
+    border-radius: 3px;
+  }
+}
+
+/* main */
+
+section[class*="main__banner"] {
+  width: 100%;
+  margin-top: 0;
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 768px;
+    width: 100%;
+    background-image: url("./images/Banner.png");
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      font-size: 60px;
+      font-weight: bold;
+      color: white;
+    }
+
+    > button {
+      margin-top: 46px;
+
+      font-size: 24px;
+      color: white;
+    }
+  }
+}
+
+.white_big__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  :first-child {
+    margin-bottom: 10px;
+  }
+}
+
+/* <!-- 아래부터 홍보 --> */
+div[class*="middle__intro"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 1084px;
+  background-color: yellow;
+  > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.button__shortcut {
+  margin: 25px 0;
+  color: var(--maincolor);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.safehomes_middle {
+  font-weight: 500;
+}
+
+div[class*="intro__boxes"] {
+  display: flex;
+  justify-content: space-between;
+  width: 975px;
+}
+.intro__box {
+  width: 293px;
+}
+.intro__title,
+.rule__title {
+  margin: 16px 0;
+  font-size: 21px;
+  font-weight: bold;
+  color: var(--basic-gray-01);
+}
+
+.intro__content,
+.rule__content {
+  color: var(--basic-gray-02);
+  line-height: 1.5rem;
+}
+
+/* <!-- 계약 규칙 --> */
+.rule__boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  width: 100%;
+  background-color: lightcoral;
+  > div {
+    width: 293px;
+    height: 141px;
+    background-color: violet;
+  }
+}
+
+.rule__number {
+  font-size: 21px;
+  color: var(--maincolor);
+}
+
+/* <!-- 아래부터 핸드폰 목업 --> */
+div[class*="phone__mockups"] {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  background-color: darkorange;
+  width: 100%;
+  > section:nth-child(2n) {
+    background-color: cornflowerblue;
+    flex-direction: row-reverse;
+  }
+}
+
+section[class*="phone__mockup"] {
+  display: flex;
+  justify-content: space-between;
+}
+.phone__menu {
+  margin-bottom: 21px;
+  color: var(--maincolor);
+  font-size: 24px;
+  font-weight: bold;
+}
+.phone__title {
+  color: var(--basic-gray-01);
+  line-height: 4rem;
+  margin: 0 0 34px 0;
+}
+.phone__textbox {
+  width: 480px;
+}
+.phone__content {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: var(--basic-gray-02);
+  line-height: 2rem;
+}
+div[class*="phone__text_img"] {
+  > img {
+    margin-bottom: 16px;
+  }
+}
+
+/* <!-- 아래부터 가격표 --> */
+section[class*="price"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  line-height: 1.5em;
+
+  background-color: wheat;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    > div {
+      display: flex;
+      align-items: center;
+    }
+    > div > div > button {
+      width: 292px;
+      height: 64px;
+
+      background-color: var(--maincolor);
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+.price__box {
+  background-color: var(--basic-gray-03);
+  width: 340px;
+  height: 401px;
+  border-radius: 10px;
+  padding: 24px;
+}
+.price_title {
+  margin-bottom: 28px;
+  color: var(--basic-gray-01);
+  font-size: 24px;
+  line-height: 2rem;
+}
+.price_content {
+  color: var(--basic-gray-02);
+  margin-bottom: 38px;
+}
+.price_number {
+  margin-bottom: 15px;
+
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--maincolor);
+}
+.price_times {
+  margin-bottom: 26px;
+  color: var(--basic-gray-02);
+}
+
+/* <!-- 아래부터 후기 --> */
+section[class*="review"] {
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+div[class*="review__boxes"] {
+  width: 100%;
+  > div {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 15%,
+      rgba(255, 255, 255, 0) 85%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    width: 100%;
+    height: 360px;
+  }
+  > ul {
+    display: flex;
+    > li:not(:nth-child(3n)) {
+      margin-right: 48px;
+    }
+  }
+}
+.review__box {
+  padding: 59px 60px;
+  width: 680px;
+  height: 360px;
+  border-radius: 10px;
+  background-color: var(--basic-gray-03);
+  color: var(--basic-gray-02);
+}
+
+div[class*="review__user_info"] {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 32px;
+  > img {
+    width: 48px;
+    height: 48px;
+  }
+  > div {
+    height: 50px;
+    margin: 0 16px;
+    background-color: wheat;
+    :first-child {
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: var(--basic-gray-01);
+    }
+  }
+}
+
+.review__content {
+  line-height: 2rem;
+}
+
+/* <!-- 초록배경 광고 --> */
+section[class*="colored__link"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--maincolor);
+  width: 100%;
+  height: 608px;
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  > div > button {
+    width: 170px;
+    height: 60px;
+    border-radius: 5px;
+    margin-top: 62px;
+
+    background-color: white;
+    font-weight: bold;
+    color: var(--maincolor);
+  }
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+
+  height: 159px;
+  width: 100%;
+  background-color: var(--basic-gray-04);
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 1112px;
+    /* background-color: tomato; */
+    color: var(--basic-gray-02);
+    font-size: 14px;
+    > p {
+      color: var(--basic-gray-01);
+      font-weight: bold;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+    > ul > li:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+}
