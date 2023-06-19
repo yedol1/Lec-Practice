@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+    <style>
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      #menu-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      li {
+        list-style: none;
+        border: 1px solid black;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+      }
+      button {
+        all: unset;
+        background-color: rgb(42, 193, 188);
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 4px;
+      }
+      /*  */
+    </style>
+  </head>
+  <body>
+    <main>
+      <ul id="menu-list"></ul>
+      <h2>Cart</h2>
+      <ul id="cart"></ul>
+    </main>
+    <script>
+      const menus = [
+        {
+          id: 1,
+          name: "파스타",
+          price: 19000,
+        },
+        {
+          id: 2,
+          name: "떡볶이",
+          price: 21000,
+        },
+        {
+          id: 3,
+          name: "치킨",
+          price: 24000,
+        },
+        {
+          id: 4,
+          name: "샌드위치",
+          price: 8900,
+        },
+        {
+          id: 5,
+          name: "당근케이크",
+          price: 5000,
+        },
+      ];
+      const $menuList = document.getElementById("menu-list");
+      const $cart = document.getElementById("cart");
+
+      const cartList = [];
+
+      menus.forEach((menu) => {
+        const $li = document.createElement("li");
+        const $heading = document.createElement("h3");
+        const $p = document.createElement("p");
+        const $btn = document.createElement("button");
+        $li.id = menu.id;
+        $heading.textContent = menu.name;
+        $p.textContent = menu.price;
+        $btn.textContent = "장바구니에 추가";
+        $btn.addEventListener("click", () => {
+          addToCart(menu.id);
+        });
+
+        $li.appendChild($heading);
+        $li.appendChild($p);
+        $li.appendChild($btn);
+
+        $menuList.appendChild($li);
+      });
+      function addToCart(id) {
+        // console.log(id);
+        const menu = menus.filter((menu) => menu.id === id)[0];
+
+        const $div = document.createElement("div");
+        const $heading = document.createElement("h3");
+        const $p = document.createElement("p");
+        $div.id = menu.id;
+        $heading.textContent = menu.name;
+        $p.textContent = menu.price;
+
+        $div.appendChild($heading);
+        $div.appendChild($p);
+
+        $cart.appendChild($div);
+      }
+    </script>
+  </body>
+</html>

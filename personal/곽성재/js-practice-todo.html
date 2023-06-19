@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO - LIST</title>
+    <style>
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        width: 70%;
+        border: 1px solid black;
+        margin-bottom: 1rem;
+        padding: 4px 8px;
+      }
+      li button {
+        margin-left: auto;
+      }
+      input {
+        height: calc(1rem + 8px);
+      }
+      button {
+        all: unset;
+        background-color: rgb(42, 193, 188);
+        color: #fff;
+        padding: 4px 12px;
+        border-radius: 4px;
+      }
+      .todo {
+        display: flex;
+        align-items: center;
+      }
+      .delete {
+        background-color: tomato;
+      }
+      input[type="checkbox"]:checked + label {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form id="form" style="margin-bottom: 1rem">
+        <input type="text" placeholder="할 일을 입력하세요" />
+        <button>추가</button>
+      </form>
+      <ul id="todoList"></ul>
+    </main>
+    <script>
+      const $todoList = document.getElementById("todoList");
+      const $form = document.getElementById("form");
+
+      let todos = [];
+
+      $form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const todo = e.target[0].value;
+        if (!todo) return;
+
+        todos.push({
+          id: todos.length,
+          desc: todo,
+          checked: false,
+        });
+
+        renderTodos();
+
+        e.target[0].value = "";
+      });
+
+      function renderTodos() {
+        $todoList.innerHTML = "";
+        todos.forEach((todo) => {
+          const $li = document.createElement("li");
+          const $inp = document.createElement("input");
+          const $label = document.createElement("label");
+          const $btn = document.createElement("button");
+
+          $li.id = todo.id;
+          $li.classList.add("todo");
+
+          $inp.name = todo.id;
+          $inp.id = todo.id;
+          $inp.type = "checkbox";
+          $inp.checked = todo.checked;
+
+          $label.textContent = todo.desc;
+          $label.htmlFor = todo.id;
+
+          $btn.classList.add("delete");
+          $btn.textContent = "삭제";
+
+          $li.appendChild($inp);
+          $li.appendChild($label);
+          $li.appendChild($btn);
+
+          $inp.addEventListener("change", (e) => {
+            todos.find((todo) => todo.id == e.target.id).checked =
+              e.target.checked;
+          });
+          $btn.addEventListener("click", (e) => {
+            deleteTodo(e.target.parentNode.id);
+          });
+
+          $todoList.appendChild($li);
+        });
+      }
+      function deleteTodo(id) {
+        todos = todos.filter((todo) => todo.id != id);
+        renderTodos();
+      }
+    </script>
+  </body>
+</html>

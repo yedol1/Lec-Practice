@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+    <style>
+      li {
+        list-style: none;
+        border: 1px solid black;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <ul id="board-list"></ul>
+    </main>
+    <script>
+      const posts = [
+        {
+          id: 1,
+          title: "tit1",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cupiditate eos fugit sit ipsa laboriosam unde amet, deserunt ut. Eligendi qui et possimus illo laboriosam asperiores tempore reprehenderit vero delectus?",
+        },
+        {
+          id: 2,
+          title: "tit2",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cupiditate eos fugit sit ipsa laboriosam unde amet, deserunt ut. Eligendi qui et possimus illo laboriosam asperiores tempore reprehenderit vero delectus?",
+        },
+        {
+          id: 3,
+          title: "tit3",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cupiditate eos fugit sit ipsa laboriosam unde amet, deserunt ut. Eligendi qui et possimus illo laboriosam asperiores tempore reprehenderit vero delectus?",
+        },
+        {
+          id: 4,
+          title: "tit4",
+          desc: "'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cupiditate eos fugit sit ipsa laboriosam unde amet, deserunt ut. Eligendi qui et possimus illo laboriosam asperiores tempore reprehenderit vero delectus?",
+        },
+        {
+          id: 5,
+          title: "tit5",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cupiditate eos fugit sit ipsa laboriosam unde amet, deserunt ut. Eligendi qui et possimus illo laboriosam asperiores tempore reprehenderit vero delectus?",
+        },
+      ];
+      const $board = document.getElementById("board-list");
+
+      posts.forEach((post) => {
+        const $li = document.createElement("li");
+        const $heading = document.createElement("h3");
+        const $p = document.createElement("p");
+        const $btn = document.createElement("button");
+        $li.id = post.id;
+        $heading.textContent = post.title;
+        $p.textContent = post.desc;
+
+        $li.appendChild($heading);
+        $li.appendChild($p);
+
+        $board.appendChild($li);
+      });
+    </script>
+  </body>
+</html>

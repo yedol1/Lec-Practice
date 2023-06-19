@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <ol id="chats"></ol>
+      <form id="form">
+        <input id="" type="text" placeholder="사용자명" />
+        <input id="" type="text" placeholder="메시지를 입력하세요" />
+        <button>전송</button>
+      </form>
+    </main>
+    <script>
+      const $chat = document.getElementById("chats");
+      const $form = document.getElementById("form");
+
+      const chatData = [];
+
+      $form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const userName = e.target[0].value;
+        const text = e.target[1].value;
+        if (!userName || !text) return;
+
+        chatData.push({
+          userName,
+          text,
+        });
+
+        e.target[0].value = "";
+        e.target[1].value = "";
+        renderLastChat();
+      });
+
+      function renderLastChat() {
+        const lastChat = chatData[chatData.length - 1];
+
+        const $div = document.createElement("div");
+        const $h3 = document.createElement("h3");
+        const $p = document.createElement("p");
+
+        $h3.textContent = lastChat.userName + " : ";
+        $p.textContent = lastChat.text;
+
+        $div.appendChild($h3);
+        $div.appendChild($p);
+
+        $chat.appendChild($div);
+      }
+    </script>
+  </body>
+</html>
