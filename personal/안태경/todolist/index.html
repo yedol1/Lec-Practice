@@ -8,22 +8,23 @@
   </head>
 
   <body>
-    <div class="login__wrapper">
-      <form id="login__form" class="hidden">
-        <input
-          type="text"
-          required
-          maxlength="15"
-          placeholder="What is your name?"
-        />
-        <button>Enter</button>
-      </form>
-      <h1 id="greeting" class="hidden"></h1>
-    </div>
+    <div>
+      <div class="time__wrapper">
+        <h3 id="date"></h3>
+        <h2 id="clock">00:00:00</h2>
+      </div>
 
-    <div class="time__wrapper">
-      <h3 id="date"></h3>
-      <h2 id="clock">00:00:00</h2>
+      <div class="login__wrapper">
+        <form id="login__form" class="hidden">
+          <input
+            type="text"
+            required
+            maxlength="15"
+            placeholder="What is your name?"
+          />
+        </form>
+        <h1 id="greeting" class="hidden"></h1>
+      </div>
     </div>
 
     <script src="js/background.js"></script>
