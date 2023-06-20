@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계</title>
+    <style>
+        body {
+            background-image: url(./images/bg1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+        }
+        #front {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #clock {
+            font-size: 5rem;
+            font-weight: 800;
+            color: black;
+        }
+
+        #greet {
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="front">
+    <div id="greet">안녕하세요<br /></div>
+    <div id="clock"></div>
+    </section>
+
+    <script>
+
+        //랜덤 배경 이미지 설정
+        const images = [
+            "./images/bg1.jpg",
+            "./images/bg2.jpg",
+            "./images/bg3.jpg",
+            "./images/bg4.jpg",
+            "./images/bg5.jpg",
+            "./images/bg6.jpg",
+        ]
+
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex]
+        }
+
+        function renderRandomImage() {
+            const randomImage = getRandomImage();
+            document.body.style.backgroundImage = `url(${randomImage})`;
+        }
+
+        //페이지 로드 시 
+        document.addEventListener("DOMContentLoaded", renderRandomImage)
+        //배경 클릭 시
+        document.body.addEventListener("click", renderRandomImage)
+
+        //현재 시간
+        function updateClock() {
+            let now = new Date();
+            let hour = String(now.getHours()).padStart(2, '0');
+            let min = String(now.getMinutes()).padStart(2, '0');
+            let sec = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').innerText = `${hour}: ${min}: ${sec}`;
+        }
+        setInterval(updateClock)
+
+        //인사
+        function greet() {
+            const name = prompt("이름을 입력하세요:");
+            const greetDiv = document.getElementById('greet');
+            if (name){
+                greetDiv.innerText = `안녕하세요. ${name}님.`;
+            } else{
+                greetDiv.innerText = '안녕하세요.';
+            }
+        }
+        greet()
+
+
+    </script>
+
+
+</body>
+
+</html>
