@@ -10,7 +10,11 @@ function getUsername(e) {
   loginForm.classList.add(HIDDEN_CLASSNAME);
   const newUsername = loginInput.value;
   localStorage.setItem(USERNAME_KEY, newUsername);
-  showUsername.innerText = `안녕하세요, ${newUsername}님!`;
+  paintGreetings(newUsername);
+}
+
+function paintGreetings(username) {
+  showUsername.innerText = `안녕하세요, ${username}님!`;
   showUsername.classList.remove(HIDDEN_CLASSNAME);
 }
 
@@ -21,6 +25,5 @@ if (savedUsername === null) {
   loginForm.addEventListener("submit", getUsername); // 폼 제출하기 (이름받는과정시작)
 } else {
   // 저장된 이름 있음 =>저장된 이름 가져오기
-  showUsername.innerText = `안녕하세요, ${savedUsername}님!`;
-  showUsername.classList.remove(HIDDEN_CLASSNAME);
+  paintGreetings(savedUsername);
 }
