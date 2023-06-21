@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .calculator {
+        width: 200px;
+        background-color: #d9d9d9;
+      }
+      .display {
+        background-color: #222;
+        height: 60px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 15px;
+        margin-bottom: 1px;
+        font-size: 24px;
+        color: #fff;
+      }
+      .row {
+        display: flex;
+      }
+      .orange {
+        background-color: #ed7117;
+      }
+      .button {
+        background-color: #555;
+        flex: 1;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1px;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function App() {
+        const [display, setDisplay] = React.useState("0");
+        const [num1, setNum1] = React.useState("");
+        const [num2, setNum2] = React.useState("");
+        const [operator, setOperator] = React.useState(null);
+        const [resultDisplayed, setResultDisplayed] = React.useState(false);
+
+        const clearDisplay = () => {
+          setDisplay("0");
+          setNum1("");
+          setNum2("");
+          setOperator(null);
+          setResultDisplayed(false);
+        };
+
+        const handleOperator = (op) => {
+          if (!num1) {
+            return;
+          }
+
+          if (operator && num2) {
+            calculate();
+          }
+
+          setOperator(op);
+          setDisplay("0");
+        };
+
+        const calculate = () => {
+          if (!num1 || !num2) {
+            return;
+          }
+
+          let result;
+          const n1 = parseFloat(num1);
+          const n2 = parseFloat(num2);
+
+          switch (operator) {
+            case "+":
+              result = n1 + n2;
+              break;
+            case "-":
+              result = n1 - n2;
+              break;
+            case "×":
+              result = n1 * n2;
+              break;
+            case "÷":
+              result = n1 / n;
+              break;
+            default:
+              return;
+          }
+          setDisplay(String(result));
+          setNum1(String(result));
+          setNum2("");
+          setResultDisplayed(true);
+        };
+
+        const appendNumber = (number) => {
+          if (resultDisplayed) {
+            clearDisplay();
+          }
+
+          if (operator) {
+            setNum2((prevNum2) => prevNum2 + number);
+            setDisplay((prevNum2) => prevNum2 + number);
+          } else {
+            setNum1((prevNum1) => prevNum1 + number);
+            setDisplay((prevNum1) => prevNum1 + number);
+          }
+        };
+
+        return (
+          <main>
+            <section className="calculator">
+              <div className="display">{display}</div>
+              <div className="row">
+                <button onClick={() => clearDisplay()} className="button" id="clear">
+                  C
+                </button>
+                <button className="button" id="negate" disabled>
+                  +/-
+                </button>
+                <button className="button" id="percentage" disabled>
+                  %
+                </button>
+                <button onClick={() => handleOperator("÷")} className="orange button" id="divide">
+                  ÷
+                </button>
+              </div>
+              <div className="row">
+                <button onClick={() => appendNumber("7")} className="button" id="seven">
+                  7
+                </button>
+                <button onClick={() => appendNumber("8")} className="button" id="eight">
+                  8
+                </button>
+                <button onClick={() => appendNumber("9")} className="button" id="nine">
+                  9
+                </button>
+                <button onClick={() => handleOperator("×")} className="orange button" id="multiply">
+                  ×
+                </button>
+              </div>
+              <div className="row">
+                <button onClick={() => appendNumber("4")} className="button" id="four">
+                  4
+                </button>
+                <button onClick={() => appendNumber("5")} className="button" id="five">
+                  5
+                </button>
+                <button onClick={() => appendNumber("6")} className="button" id="six">
+                  6
+                </button>
+                <button onClick={() => handleOperator("-")} className="orange button" id="subtract">
+                  -
+                </button>
+              </div>
+              <div className="row">
+                <button onClick={() => appendNumber("1")} className="button" id="one">
+                  1
+                </button>
+                <button onClick={() => appendNumber("2")} className="button" id="two">
+                  2
+                </button>
+                <button onClick={() => appendNumber("3")} className="button" id="three">
+                  3
+                </button>
+                <button onClick={() => handleOperator("+")} className="orange button" id="add">
+                  +
+                </button>
+              </div>
+              <div className="row">
+                <button onClick={() => appendNumber("0")} className="button" id="zero" style={{ flex: 2 }}>
+                  0
+                </button>
+                <button onClick={() => appendNumber(".")} className="button" id="decimal">
+                  .
+                </button>
+                <button onClick={() => calculate()} className="orange button" id="equal">
+                  =
+                </button>
+              </div>
+            </section>
+          </main>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

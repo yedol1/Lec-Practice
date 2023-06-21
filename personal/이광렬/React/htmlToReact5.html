@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>시계</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-size: 2em;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Clock() {
+        const [time, setTime] = React.useState(new Date());
+
+        React.useEffect(() => {
+          const intervalID = setInterval(() => {
+            setTime(new Date());
+          }, 1000);
+
+          return () => {
+            clearInterval(intervalID);
+          };
+        }, []);
+
+        const hours = time.getHours().toString().padStart(2, "00");
+        const minutes = time.getMinutes().toString().padStart(2, "00");
+        const seconds = time.getSeconds().toString().padStart(2, "00");
+
+        return <div>{`${hours}:${minutes}:${seconds}`}</div>;
+      }
+
+      ReactDOM.render(<Clock />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

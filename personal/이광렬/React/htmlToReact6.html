@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>슬라이드</title>
+    <style>
+      .slider {
+        width: 400px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .slider .image-container {
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .slider .prev,
+      .slider .next {
+        position: absolute;
+        top: 50%;
+        border: none;
+        font-size: 2rem;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .slider .prev {
+        left: 10px;
+      }
+
+      .slider .next {
+        right: 10px;
+      }
+    </style>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const Slider = () => {
+        const [index, setIndex] = React.useState(0);
+
+        const updateSlider = () => {
+          const imageContainer = document.querySelector(".image-container");
+          imageContainer.style.backgroundImage = `url('images/${index}.png')`;
+        };
+
+        const prevClick = () => {
+          setIndex((oldIndex) => {
+            let newIndex = oldIndex - 1;
+            if (newIndex < 0) newIndex = 7;
+            return newIndex;
+          });
+        };
+
+        const nextClick = () => {
+          setIndex((oldIndex) => {
+            let newIndex = oldIndex + 1;
+            if (newIndex > 7) newIndex = 0;
+            return newIndex;
+          });
+        };
+
+        React.useEffect(() => {
+          updateSlider();
+        }, [index]);
+
+        return (
+          <div class="slider">
+            <button class="prev" onClick={prevClick}>
+              ⟨
+            </button>
+            <div class="image-container"></div>
+            <button class="next" onClick={nextClick}>
+              ⟩
+            </button>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Slider />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

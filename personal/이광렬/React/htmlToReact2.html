@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>여기어때</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function SearchForm() {
+        return (
+          <div>
+            <h1>여기어때</h1>
+            <form action="https://www.goodchoice.kr/product/result" method="get">
+              <label htmlFor="keyword">Search:</label>
+              <br />
+              <input type="search" id="keyword" name="keyword" required />
+              <input type="submit" value="Search" />
+            </form>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<SearchForm />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

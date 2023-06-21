@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>이광렬 자기소개서</title>
+
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react-bootstrap@1.6.1/dist/react-bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
+      integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { Container, Row, Col, Card, ListGroup } = window.ReactBootstrap;
+
+      const Header = () => (
+        <header className="text-center py-3">
+          <h1 className="text-white">이광렬</h1>
+          <img src="https://github.com/yedol1/FM_Search/assets/57481378/8d892bb3-61ff-4125-8d27-5a3449c91a7b" alt="이광렬 사진" className="rounded" />
+        </header>
+      );
+
+      const NavBar = () => (
+        <nav className="navbar navbar-expand-lg navbar-light">
+          <div className="collapse navbar-collapse justify-content-center">
+            <ul className="navbar-nav">
+              <li className="nav-item mx-2">
+                <a className="nav-link text-white" href="#personal-info">
+                  개인 정보
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a className="nav-link text-white" href="#hobby">
+                  취미
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a className="nav-link text-white" href="#specialty">
+                  특기
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a className="nav-link text-white" href="#company">
+                  취업하고자 하는 회사
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      );
+
+      const Main = () => (
+        <Container>
+          <Row className="justify-content-md-center mt-3">
+            <Col lg="5" md="12">
+              <Card className="mb-4" id="personal-info">
+                <Card.Header as="h2">🌸 개인 정보 🌸</Card.Header>
+                <Card.Body>
+                  <dl>
+                    <dt>이름</dt>
+                    <dd>이광렬</dd>
+                    <dt>나이</dt>
+                    <dd>26</dd>
+                    <dt>MBTI</dt>
+                    <dd>ENFP</dd>
+                    <dt>블로그</dt>
+                    <dd>
+                      <a href="https://velog.io/@yedol1">Velog</a>
+                    </dd>
+                  </dl>
+                </Card.Body>
+              </Card>
+
+              <Card className="mb-4" id="specialty">
+                <Card.Header as="h2">👑 특기 👑</Card.Header>
+                <Card.Body>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item>1️⃣ 일단 배우고자 싶은것이 있다면 바로 시도해보는것에 익숙합니다.</ListGroup.Item>
+                    <ListGroup.Item>2️⃣ React 프레임 워크에 익숙합니다.</ListGroup.Item>
+                    <ListGroup.Item>3️⃣ 스포츠활동과 같은 활동적인 활동을 좋아합니다.</ListGroup.Item>
+                    <ListGroup.Item>4️⃣ 의사소통을 통해 문제해결을 지향합니다.</ListGroup.Item>
+                  </ListGroup>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col lg="5" md="12">
+              <Card className="mb-4" id="hobby">
+                <Card.Header as="h2">🏃 취미 🏃</Card.Header>
+                <Card.Body>
+                  <ListGroup variant="flush">
+                    <ListGroup.Item>1️⃣ 야구 & 축구</ListGroup.Item>
+                    <ListGroup.Item>2️⃣ 커피챗</ListGroup.Item>
+                    <ListGroup.Item>3️⃣ 공연관람</ListGroup.Item>
+                    <ListGroup.Item>4️⃣ 전시회관람</ListGroup.Item>
+                  </ListGroup>
+                </Card.Body>
+              </Card>
+
+              <Card className="mb-4" id="company">
+                <Card.Header as="h2">💼 취업하고자 하는 회사 💼</Card.Header>
+                <Card.Body>web 3 를 다루는 회사도 관심있고, 플랫폼을 메인으로 다루는 회사에 관심이 있습니다. 특히, 제가 성장하는것에 있어 도움이 되는 회사를 원합니다.</Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      );
+
+      const Footer = () => (
+        <footer className="text-center py-3">
+          <p>이광렬 소개 웹사이트</p>
+        </footer>
+      );
+
+      const App = () => (
+        <React.Fragment>
+          <Header />
+          <NavBar />
+          <Main />
+          <Footer />
+        </React.Fragment>
+      );
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

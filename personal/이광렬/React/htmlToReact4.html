@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>랜덤이미지</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function RandomImage() {
+        const [randomNumber, setRandomNumber] = React.useState(0);
+
+        function changeImage() {
+          setRandomNumber(Math.floor(Math.random() * 8));
+        }
+
+        return <img id="randomImage" src={"./images/" + randomNumber + ".png"} alt="random image" onClick={changeImage} />;
+      }
+
+      ReactDOM.render(<RandomImage />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
