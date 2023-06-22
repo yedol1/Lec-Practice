@@ -11,7 +11,16 @@
     <div>
       <div class="time__wrapper">
         <h3 id="date"></h3>
-        <h2 id="clock">00:00:00</h2>
+        <div class="clock__wrapper">
+          <span id="ampm"></span>
+          <h2 id="clock">
+            <span id="hour"></span>
+            <span class="divide">:</span>
+            <span id="minute"></span>
+            <span class="divide">:</span>
+            <span id="second"></span>
+          </h2>
+        </div>
       </div>
 
       <div class="login__wrapper">
@@ -24,6 +33,12 @@
           />
         </form>
         <h1 id="greeting" class="hidden"></h1>
+      </div>
+      <div class="todo__wrapper">
+        <form id="todo__form">
+          <input type="text" required placeholder="오늘 뭐하지?" />
+        </form>
+        <ul id="todo__list"></ul>
       </div>
     </div>
 
