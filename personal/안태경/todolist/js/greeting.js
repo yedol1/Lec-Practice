@@ -1,6 +1,7 @@
 const loginForm = document.querySelector("form#login__form");
 const loginInput = loginForm.querySelector("input");
 const showUsername = document.querySelector("h1#greeting");
+const showToDoList = document.querySelector("main");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
@@ -16,6 +17,7 @@ function getUsername(e) {
 function paintGreetings(username) {
   showUsername.innerText = `안녕하세요, ${username}님!`;
   showUsername.classList.remove(HIDDEN_CLASSNAME);
+  showToDoList.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
