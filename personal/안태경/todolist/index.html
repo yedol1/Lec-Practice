@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <div>
+    <header>
       <div class="time__wrapper">
         <h3 id="date"></h3>
         <div class="clock__wrapper">
@@ -34,16 +34,27 @@
         </form>
         <h1 id="greeting" class="hidden"></h1>
       </div>
-      <div class="todo__wrapper">
-        <form id="todo__form">
-          <input type="text" required placeholder="오늘 뭐하지?" />
-        </form>
-        <ul id="todo__list"></ul>
+
+      <div id="weather">
+        <span></span>
+        <span></span>
       </div>
-    </div>
+    </header>
+    <main class="todo__wrapper hidden">
+      <form id="todo__form">
+        <div>🌱오늘의 할일 :</div>
+        <input type="text" required />
+      </form>
+      <div class="list__wrapper">
+        <div>오늘의 일정이 없어요</div>
+        <ul id="todo__list" class="hidden"></ul>
+      </div>
+    </main>
 
     <script src="js/background.js"></script>
     <script src="js/time.js"></script>
     <script src="js/greeting.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
