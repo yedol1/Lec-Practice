@@ -6,6 +6,20 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "LOTTERIACHAB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Humanbumsuk";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
 }
@@ -29,16 +43,20 @@ img {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-  opacity: 50%;
+  opacity: 80%;
 }
 body {
+  /* font-family: "LOTTERIACHAB"; */
   font-family: "TAEBAEKmilkyway";
+  font-weight: bold;
+  /* font-family: "Humanbumsuk"; */
   height: 100vh;
 }
 body > div {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 20px;
   width: 800px;
+  border-radius: 30px;
 }
 body,
 body > div {
@@ -51,17 +69,46 @@ body > div {
 .time__wrapper {
   padding: 50px;
 
-  > h3 {
-  }
-  > h2 {
+  #clock {
     margin-top: 20px;
     font-size: 96px;
+    display: flex;
+
+    > span {
+      display: block;
+      width: 130px;
+    }
+    #hour {
+      text-align: right;
+    }
+    #minute {
+      text-align: center;
+      width: 120px;
+    }
+    #second {
+      text-align: left;
+    }
+    .divide {
+      width: 25px;
+      text-align: center;
+    }
   }
 }
+#date {
+  padding: 0 30px;
+  display: none;
+}
+
+.clock__wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
 .login__wrapper {
-  /* background-color: aqua; */
   padding: 50px;
   font-size: 56px;
+  font-family: "TAEBAEKmilkyway";
+
   > form > input {
     width: 300px;
     height: 50px;
