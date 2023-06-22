@@ -6,20 +6,6 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "LOTTERIACHAB";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Humanbumsuk";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
 * {
   box-sizing: border-box;
 }
@@ -34,7 +20,7 @@ input {
   appearance: none;
   margin: 0;
 }
-img {
+body > img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -43,32 +29,27 @@ img {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-  opacity: 80%;
+  opacity: 70%;
 }
 body {
-  /* font-family: "LOTTERIACHAB"; */
   font-family: "TAEBAEKmilkyway";
   font-weight: bold;
-  /* font-family: "Humanbumsuk"; */
   height: 100vh;
 }
-body > div {
-  background-color: rgba(255, 255, 255, 0.6);
+header {
   padding: 20px;
-  width: 800px;
-  border-radius: 30px;
+  width: 100%;
 }
 body,
-body > div {
+header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+/* 시계 및 날짜 */
 .time__wrapper {
-  padding: 50px;
-
   #clock {
     margin-top: 20px;
     font-size: 96px;
@@ -104,11 +85,11 @@ body > div {
   align-items: flex-end;
 }
 
+/* 로그인 입력창 및 로그인 후 화면 */
 .login__wrapper {
-  padding: 50px;
+  padding: 20px;
   font-size: 56px;
   font-family: "TAEBAEKmilkyway";
-
   > form > input {
     width: 300px;
     height: 50px;
@@ -119,7 +100,75 @@ body > div {
     font-size: 30px;
     font-family: inherit;
   }
+  > h1 {
+    font-size: 24px;
+  }
 }
 input:focus {
   outline: none;
+}
+
+/* TODOLIST */
+.todo__wrapper {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 30px;
+  width: 800px;
+  height: 400px;
+  border-radius: 30px;
+}
+
+#todo__form {
+  display: flex;
+  font-size: 18px;
+  margin-bottom: 20px;
+  > input {
+    margin-left: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    width: 80%;
+  }
+}
+.list__wrapper {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list__wrapper ul {
+  height: 100%;
+  width: 100%;
+}
+#todo__list {
+  margin-left: 20px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+#todo__list li {
+  margin-top: 8px;
+}
+#todo__list button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 날씨 정보 */
+#weather {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+#weather span {
+  display: block;
+  text-align: right;
 }
