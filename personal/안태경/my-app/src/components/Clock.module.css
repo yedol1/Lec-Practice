@@ -1,0 +1,5 @@
+.time_wrapper span:last-child {
+  margin-top: 20px;
+  font-size: 96px;
+  display: flex;
+}
