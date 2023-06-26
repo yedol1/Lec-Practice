@@ -1,4 +1,4 @@
-import styles from "./Background.module.css";
+import styles from "./css/Background.module.css";
 
 const Background = () => {
   const images = [...Array(10)].map((item, index) => `${index + 1}.jpg`);
