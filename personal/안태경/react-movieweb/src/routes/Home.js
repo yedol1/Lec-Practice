@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
 import styled from "styled-components";
+import Header from "../components/Header";
 
 const MoviesWrapper = styled.div`
   background-color: black;
@@ -38,13 +39,15 @@ const Home = () => {
   }, []);
   return (
     <div>
+      <Header />
       {loading ? (
-        "Loading..."
+        <div>"Loading..."</div>
       ) : (
         <MoviesWrapper>
           {movies.map((movie) => (
             <Movie
               key={movie.id}
+              year={movie.year}
               id={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
