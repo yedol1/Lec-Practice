@@ -8,16 +8,17 @@ const TodoList = () => {
   // localStorage 불러오기
   useEffect(() => {
     const savedList = localStorage.getItem(TODOS_KEY);
-
     if (savedList !== null) {
-      const getItem = JSON.parse(savedList);
-      setTodoList(getItem);
+      setTodoList(JSON.parse(savedList));
     }
   }, []);
 
   // localStorage 저장
   useEffect(() => {
-    localStorage.setItem(TODOS_KEY, JSON.stringify(todoList));
+    // 조건부 추가 => 없으면 새로고침 시 로컬스토리지 값 사라짐
+    if (todoList.length > 0) {
+      localStorage.setItem(TODOS_KEY, JSON.stringify(todoList));
+    }
   }, [todoList]);
 
   const onChange = (e) => {
@@ -33,10 +34,7 @@ const TodoList = () => {
       text: todo,
       id: Date.now(),
     };
-    setTodoList((oldList) => {
-      const newList = [newTodoObj, ...oldList];
-      return newList;
-    });
+    setTodoList((oldList) => [newTodoObj, ...oldList]);
     setTodo("");
   };
 
@@ -45,10 +43,6 @@ const TodoList = () => {
       todoList.filter((item) => item.id !== parseInt(e.target.parentElement.id))
     );
   };
-
-  // useEffect(() => {
-  //   localStorage.setItem(TODOS_KEY, JSON.stringify(todoList));
-  // }, [todoList]);
 
   return (
     <div>
