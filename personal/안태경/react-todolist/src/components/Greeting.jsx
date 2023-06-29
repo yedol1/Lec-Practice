@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./css/Greeting.module.css";
+import TodoList from "./Todo";
 
 const LoginForm = () => {
   const USERNAME_KEY = "username";
@@ -26,8 +27,13 @@ const LoginForm = () => {
     <div className={styles.greeting__wrapper}>
       {savedName ? (
         <div className={styles.greeting__greeting}>
-          <h1>안녕하세요, {savedName}님!</h1>
-          <button onClick={onRemoveUser}>로그아웃</button>
+          <div>
+            <h1>안녕하세요, {savedName}님!</h1>
+            <button className={styles.logout} onClick={onRemoveUser}>
+              로그아웃
+            </button>
+          </div>
+          <TodoList />
         </div>
       ) : (
         <form onSubmit={onSubmit} className={styles.greeting__login_form}>

@@ -20,13 +20,19 @@
 /* 로그인 후 */
 .greeting__greeting {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  div {
+    display: flex;
+    align-items: center;
+  }
 }
+
 .greeting__greeting h1 {
   font-size: 24px;
   margin: 0 10px;
 }
-.greeting__greeting button {
+.logout {
   display: block;
   position: relative;
   float: left;
