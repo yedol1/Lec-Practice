@@ -1,11 +1,11 @@
-const express = require("express");
-const http = require("http");
-const socketIO = require("socket.io");
-const cors = require("cors");
+import express from "express";
+import { createServer } from "http";
+import socketIO from "socket.io";
+import cors from "cors";
 
 const app = express();
 app.use(cors());
-const server = http.createServer(app);
+const server = createServer(app);
 const io = socketIO(server, {
   cors: {
     origin: "http://localhost:3000",
