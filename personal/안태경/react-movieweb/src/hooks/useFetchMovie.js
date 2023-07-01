@@ -25,7 +25,7 @@ function reducer(state, action) {
   }
 }
 
-function useAsync(callback, deps = []) {
+function useFetchMovie(callback, deps = []) {
   const [state, dispatch] = useReducer(reducer, {
     loading: false,
     data: null,
@@ -51,4 +51,4 @@ function useAsync(callback, deps = []) {
   return [state, fetchData];
 }
 
-export default useAsync;
+export default useFetchMovie;

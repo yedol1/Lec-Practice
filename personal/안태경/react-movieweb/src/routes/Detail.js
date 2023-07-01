@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // useParams => 동적 url부분(:id)을 가져옴
 import styled from "styled-components";
-import useAsync from "../hooks/useFetchMovie";
+import useFetchMovie from "../hooks/useFetchMovie";
 
 const DetailsWrapper = styled.div`
   display: flex;
@@ -57,7 +57,7 @@ async function getUser(id) {
 }
 const Detail = () => {
   const { id } = useParams();
-  const [state] = useAsync(() => getUser(id), [id]);
+  const [state] = useFetchMovie(() => getUser(id), [id]);
   const { loading, data: user, error } = state;
 
   if (loading) return <div>로딩중..</div>;

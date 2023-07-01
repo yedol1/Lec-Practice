@@ -3,7 +3,7 @@ import Movie from "../components/Movie";
 import styled from "styled-components";
 import Header from "../components/Header";
 import axios from "axios";
-import useAsync from "../hooks/useFetchMovie";
+import useFetchMovie from "../hooks/useFetchMovie";
 
 const MoviesWrapper = styled.div`
   background-color: black;
@@ -31,7 +31,7 @@ async function getUsers() {
 }
 
 const Home = () => {
-  const [state, refetch] = useAsync(getUsers, []);
+  const [state, refetch] = useFetchMovie(getUsers, []);
   const { loading, data: users, error } = state; // state.data 를 users 키워드로 조회
 
   if (loading) return <div>로딩중..</div>;
