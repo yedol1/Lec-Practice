@@ -1,18 +1,55 @@
 import React, { useEffect, useState } from "react";
-import { fetchMovieData } from "api/movie";
 import Card from "components/Card";
 import styled from "styled-components";
-import GlobalStyle from "styles/GlobalStyle";
 import Select from "react-select";
-import Loading from "./images/Rocket.gif";
-function App() {
+import Loading from "images/Rocket.gif";
+import { Link } from "react-router-dom";
+import { useSearch } from "customHook";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "actions/favoritesActions";
+
+import FAVORITE_ON from "images/favorite_on.svg";
+import FAVORITE_OFF from "images/favorite_off.svg";
+
+function Home() {
   const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
-  const [minimumRating, setMinimumRating] = useState(7);
-  const [sortBy, setSortBy] = useState("year");
-  const [orderBy, setOrderBy] = useState("desc");
   const [loading, setLoading] = useState(true);
-  const [queryTerm, setQueryTerm] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const { searchParams, setSearchParams, customHandleSearch } = useSearch();
+  const { page, minimumRating, sortBy, orderBy, queryTerm } = searchParams;
+
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state);
+
+  const handleFavorite = (movie) => {
+    if (favorites.includes(movie)) {
+      dispatch(removeFavorite(movie));
+    } else {
+      dispatch(addFavorite(movie));
+    }
+  };
+
+  useEffect(() => {
+    const getData = async () => {
+      setLoading(true);
+      const data = await customHandleSearch(page, minimumRating, sortBy, orderBy, queryTerm);
+      if (data && data.data) {
+        setMovies(data.data.movies);
+      }
+      setLoading(false);
+    };
+    getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page, minimumRating, sortBy, orderBy, queryTerm]);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSearchClick = () => {
+    setSearchParams((prev) => ({ ...prev, queryTerm: inputValue }));
+  };
+
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -54,52 +91,10 @@ function App() {
     { value: "desc", label: "🔽" },
     { value: "asc", label: "🔼" },
   ];
-  useEffect(() => {
-    if (page > 0) {
-      const getData = async () => {
-        try {
-          setLoading(true);
-          const data = await fetchMovieData(page, minimumRating, sortBy, orderBy, queryTerm);
-          setMovies(data.data.movies);
-          setLoading(false);
-        } catch (error) {
-          setPage(page - 1);
-          console.log(error);
-        }
-      };
-      getData();
-    } else {
-      setPage(1);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page, minimumRating, sortBy, orderBy]);
 
-  const handleSearch = async () => {
-    try {
-      setLoading(true);
-      const data = await fetchMovieData(page, minimumRating, sortBy, orderBy, queryTerm);
-      setMovies(data.data.movies);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleInputChange = (e) => {
-    setQueryTerm(e.target.value);
-  };
-
-  console.log(movies);
-  if (loading)
-    return (
-      <LoadingPage>
-        <img src={Loading} alt="loading" />
-      </LoadingPage>
-    );
-
+  console.log(favorites);
   return (
-    <React.Fragment>
-      <GlobalStyle />
+    <>
       <Header>
         <h1>영화 검색</h1>
       </Header>
@@ -107,8 +102,8 @@ function App() {
         <section>
           <div>
             <label htmlFor="searchInput"></label>
-            <input type="text" id="searchInput" value={queryTerm} onChange={handleInputChange} placeholder="찾고자하는 키워드를 입력해주세요." />
-            <button onClick={handleSearch}>
+            <input type="text" id="searchInput" value={inputValue} onChange={handleInputChange} placeholder="찾고자하는 키워드를 입력해주세요." />
+            <button onClick={handleSearchClick}>
               <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="검색" />
             </button>
           </div>
@@ -119,7 +114,7 @@ function App() {
                 id="minimumRating"
                 options={ratingOptions}
                 value={ratingOptions.find((option) => option.value === minimumRating)}
-                onChange={(selectedOption) => setMinimumRating(selectedOption.value)}
+                onChange={(selectedOption) => setSearchParams((prevState) => ({ ...prevState, minimumRating: selectedOption.value }))}
                 styles={customStyles}
               />
             </div>
@@ -129,7 +124,7 @@ function App() {
                 id="sortBy"
                 options={sortByOptions}
                 value={sortByOptions.find((option) => option.value === sortBy)}
-                onChange={(selectedOption) => setSortBy(selectedOption.value)}
+                onChange={(selectedOption) => setSearchParams((prevState) => ({ ...prevState, sortBy: selectedOption.value }))}
                 styles={customStyles}
               />
             </div>
@@ -140,33 +135,52 @@ function App() {
                 id="orderBy"
                 options={orderByOptions}
                 value={orderByOptions.find((option) => option.value === orderBy)}
-                onChange={(selectedOption) => setOrderBy(selectedOption.value)}
+                onChange={(selectedOption) => setSearchParams((prevState) => ({ ...prevState, orderBy: selectedOption.value }))}
                 styles={customStyles}
               />
             </div>
           </div>
         </section>
         <section>
-          {movies ? (
+          {loading ? (
+            <LoadingPage>
+              <img src={Loading} alt="loading" />
+            </LoadingPage>
+          ) : movies ? (
             <ul>
               {movies.map((movie) => (
-                <Card key={movie.id} movie={movie} />
+                <li key={movie.id}>
+                  {favorites.includes(movie.id) ? (
+                    <FavoriteBtn onClick={() => handleFavorite(movie.id)}>
+                      <img src={FAVORITE_ON} alt="" />
+                    </FavoriteBtn>
+                  ) : (
+                    <FavoriteBtn onClick={() => handleFavorite(movie.id)}>
+                      <img src={FAVORITE_OFF} alt="" />
+                    </FavoriteBtn>
+                  )}
+                  <Link to={`/movie/${movie.id}`}>
+                    <Card movie={movie} />
+                  </Link>
+                </li>
               ))}
             </ul>
           ) : (
             <div>키워드와 연관된 영화가 존재하지 않습니다.</div>
           )}
         </section>
-        <Footer>
-          {page > 1 && <button onClick={() => setPage((prev) => prev - 1)}>이전</button>}
+
+        <PageNation>
+          {page > 1 && <button onClick={() => setSearchParams((prevState) => ({ ...prevState, page: prevState.page - 1 }))}>이전</button>}
           <span>{page}</span>
-          <button onClick={() => setPage((prev) => prev + 1)}>다음</button>
-        </Footer>
+          <button onClick={() => setSearchParams((prevState) => ({ ...prevState, page: prevState.page + 1 }))}>다음</button>
+        </PageNation>
       </Main>
-    </React.Fragment>
+    </>
   );
 }
-export default App;
+
+export default Home;
 
 const Header = styled.header`
   color: #000;
@@ -181,7 +195,7 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  section:first-child {
+  > section:first-child {
     display: flex;
     flex-direction: column;
     > div:nth-of-type(1) {
@@ -234,7 +248,7 @@ const Main = styled.main`
     }
   }
 `;
-const Footer = styled.footer`
+const PageNation = styled.footer`
   button {
     background-color: #0077ff;
     color: #ffffff;
@@ -261,9 +275,22 @@ const LoadingPage = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 300px);
   img {
     width: 100px;
     height: 100px;
+  }
+`;
+
+const FavoriteBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  > img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
   }
 `;

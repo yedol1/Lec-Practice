@@ -3,7 +3,7 @@ import styled from "styled-components";
 import star from "../images/별점.svg";
 const Card = ({ movie }) => {
   return (
-    <List key={movie.id}>
+    <List>
       <img src={movie.medium_cover_image} alt={movie.title} />
       <div>
         <p>
@@ -25,7 +25,7 @@ const Card = ({ movie }) => {
 
 export default Card;
 
-const List = styled.li`
+const List = styled.section`
   width: 250px;
   height: 490px;
   display: flex;
@@ -35,12 +35,15 @@ const List = styled.li`
   }
   div {
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: 12px;
     h3 {
       color: var(--gray-900, #111827);
       font-size: 18px;
-
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-weight: 700;
     }
     p:nth-child(1) {
@@ -65,13 +68,15 @@ const List = styled.li`
     ul {
       display: flex;
       flex-direction: row;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       li + li {
         margin-left: 8px;
       }
       li {
         color: var(--gray-400, #9ca3af);
         font-size: 12px;
-
         font-weight: 700;
       }
     }

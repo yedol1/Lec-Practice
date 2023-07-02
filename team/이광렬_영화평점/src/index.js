@@ -1,8 +1,20 @@
 import React from "react";
-// import ReactDOM from 'react-dom'; //구버전
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 import App from "./App";
 
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(<App />);
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import favoritesReducer from "reducers/favoritesReducer";
+
+const store = createStore(favoritesReducer);
+
+console.log(store.getState());
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);

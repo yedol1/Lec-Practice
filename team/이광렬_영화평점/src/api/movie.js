@@ -13,3 +13,13 @@ export const fetchMovieData = async (page, minimum_rating, sort_by, order_by, qu
 
   return response.data;
 };
+
+export const fetchMovieDetail = async (id) => {
+  const response = await axios.get("/movie_details.json", {
+    params: {
+      movie_id: id,
+    },
+  });
+
+  return response.data;
+};
