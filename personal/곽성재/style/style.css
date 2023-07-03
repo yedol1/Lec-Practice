@@ -152,7 +152,7 @@ body {
 /* nav */
 .container-nav {
   padding-block: 20px;
-  width: 1112px;
+  max-width: 1112px;
   margin-inline: auto;
 }
 .logo {
@@ -373,6 +373,7 @@ body {
 /* section 6 */
 .sect-sixth {
   margin-bottom: 136px;
+  overflow-x: hidden;
 }
 
 .sect-sixth .tit {
@@ -457,19 +458,19 @@ body {
     letter-spacing: -0.9;
   }
   .container {
-    width: 634px;
+    max-width: 634px;
   }
   .container-lg {
-    width: 712px;
+    max-width: 712px;
   }
   .container-nav {
-    width: 671px;
+    max-width: 671px;
   }
   .container-nav .btn-wrap li:nth-child(1) {
     display: none;
   }
   .footer-info {
-    width: 734px;
+    max-width: 734px;
   }
   .header-banner {
     height: 400px;
@@ -540,7 +541,7 @@ body {
     margin-bottom: 84px;
   }
   .footer-info {
-    width: 680px;
+    max-width: 680px;
   }
 }
 
@@ -554,13 +555,13 @@ body {
     letter-spacing: -0.79px;
   }
   .container-nav {
-    width: 432px;
+    max-width: 432px;
   }
   .container {
-    width: 408px;
+    max-width: 408px;
   }
   .container-lg {
-    width: 394px;
+    max-width: 394px;
   }
   .flex {
     justify-content: center;
