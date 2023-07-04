@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite, removeFavorite } from "actions/favoritesActions";
+import { addFavorite, removeFavorite } from "modules/favorites";
 import { fetchMovieDetail } from "api/movie";
 import { useParams } from "react-router-dom";
 
@@ -11,18 +11,19 @@ import styled from "styled-components";
 import Card from "components/Card";
 
 const Detail = () => {
-  const dispatch = useDispatch();
-  const favorites = useSelector((state) => state);
   const [movie, setMovie] = useState([]);
   const [loading, setLoading] = useState(false);
   const ID = useParams();
   console.log(ID);
 
-  const handleFavorite = (movie) => {
-    if (favorites.includes(movie)) {
-      dispatch(removeFavorite(movie));
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favoritesList);
+
+  const handleFavorite = (id) => {
+    if (favorites.includes(id)) {
+      dispatch(removeFavorite(id));
     } else {
-      dispatch(addFavorite(movie));
+      dispatch(addFavorite(id));
     }
   };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import star from "../images/별점.svg";
+import star from "../images/별점.svg";
 const Card = ({ movie }) => {
   return (
     <List>

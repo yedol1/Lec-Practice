@@ -1,12 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-
+import store from "./modules/index";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import favoritesReducer from "reducers/favoritesReducer";
-
-const store = createStore(favoritesReducer);
 
 console.log(store.getState());
 

@@ -6,7 +6,7 @@ import Loading from "images/Rocket.gif";
 import { Link } from "react-router-dom";
 import { useSearch } from "customHook";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite, removeFavorite } from "actions/favoritesActions";
+import { addFavorite, removeFavorite } from "modules/favorites";
 
 import FAVORITE_ON from "images/favorite_on.svg";
 import FAVORITE_OFF from "images/favorite_off.svg";
@@ -19,13 +19,13 @@ function Home() {
   const { page, minimumRating, sortBy, orderBy, queryTerm } = searchParams;
 
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state);
+  const favorites = useSelector((state) => state.favoritesList);
 
-  const handleFavorite = (movie) => {
-    if (favorites.includes(movie)) {
-      dispatch(removeFavorite(movie));
+  const handleFavorite = (id) => {
+    if (favorites.includes(id)) {
+      dispatch(removeFavorite(id));
     } else {
-      dispatch(addFavorite(movie));
+      dispatch(addFavorite(id));
     }
   };
 
